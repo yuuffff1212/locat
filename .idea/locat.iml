@@ -404,6 +404,47 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="choice (vbundled(0.2.0)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/choice-0.2.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/choice-0.2.0/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/choice-0.2.0/examples" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/choice-0.2.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/choice-0.2.0/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/choice-0.2.0/examples" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/choice-0.2.0/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/choice-0.2.0/examples" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="coderay (vbundled(1.1.3)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/coderay-1.1.3/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/coderay-1.1.3/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/coderay-1.1.3/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/coderay-1.1.3/lib" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/coderay-1.1.3/bin" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="concurrent-ruby (vbundled(1.1.8)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -874,6 +915,47 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="pry (vbundled(0.14.1)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/pry-0.14.1/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/pry-0.14.1/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/pry-0.14.1/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/pry-0.14.1/lib" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/pry-0.14.1/bin" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="pry-rails (vbundled(0.3.9)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/pry-rails-0.3.9/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/pry-rails-0.3.9/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/pry-rails-0.3.9/scenarios" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/pry-rails-0.3.9/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/pry-rails-0.3.9/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/pry-rails-0.3.9/scenarios" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/pry-rails-0.3.9/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/pry-rails-0.3.9/scenarios" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="public_suffix (vbundled(4.0.6)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -1061,6 +1143,28 @@
         </SOURCES>
         <excluded>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/rails-dom-testing-2.0.3/test" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="rails-erd (vbundled(1.6.1)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/rails-erd-1.6.1/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/rails-erd-1.6.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/rails-erd-1.6.1/test" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/rails-erd-1.6.1/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/rails-erd-1.6.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/rails-erd-1.6.1/test" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/rails-erd-1.6.1/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/rails-erd-1.6.1/test" />
         </excluded>
       </library>
     </orderEntry>
@@ -1284,6 +1388,37 @@
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/rubocop-ast-1.4.1/lib" />
         </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="ruby-graphviz (vbundled(1.2.5)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/man" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/.github" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/examples" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/man" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/.github" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/examples" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/man" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/.github" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/ruby-graphviz-1.2.5/examples" />
+        </excluded>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
@@ -1762,6 +1897,7 @@
         <option value="benchmark" />
         <option value="channel" />
         <option value="controller" />
+        <option value="erd:install" />
         <option value="generator" />
         <option value="helper" />
         <option value="integration_test" />
@@ -1792,6 +1928,7 @@
         <option value="benchmark" />
         <option value="channel" />
         <option value="controller" />
+        <option value="erd:install" />
         <option value="generator" />
         <option value="helper" />
         <option value="integration_test" />
@@ -1990,6 +2127,7 @@
               <RakeTaskImpl description="" fullCommand="db:truncate_all" id="truncate_all" />
             </subtasks>
           </RakeTaskImpl>
+          <RakeTaskImpl description="Generate an Entity-Relationship Diagram based on your models" fullCommand="erd" id="erd" />
           <RakeTaskImpl id="log">
             <subtasks>
               <RakeTaskImpl description="Truncates all/specified *.log files in log/ to zero bytes (specify which logs with LOGS=test,development)" fullCommand="log:clear" id="clear" />
@@ -2101,6 +2239,14 @@
           </RakeTaskImpl>
           <RakeTaskImpl description="" fullCommand="default" id="default" />
           <RakeTaskImpl description="" fullCommand="environment" id="environment" />
+          <RakeTaskImpl id="erd">
+            <subtasks>
+              <RakeTaskImpl description="" fullCommand="erd:check_dependencies" id="check_dependencies" />
+              <RakeTaskImpl description="" fullCommand="erd:generate" id="generate" />
+              <RakeTaskImpl description="" fullCommand="erd:load_models" id="load_models" />
+              <RakeTaskImpl description="" fullCommand="erd:options" id="options" />
+            </subtasks>
+          </RakeTaskImpl>
           <RakeTaskImpl id="railties">
             <subtasks>
               <RakeTaskImpl id="install">
