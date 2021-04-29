@@ -1,0 +1,162 @@
+//新規登録ページ
+.sign-up-container {
+  display: flex;
+}
+
+.sign-up {
+  width: 900px;
+  margin: 50px auto;
+  padding: 50px;
+  background-color: #CCCCCC;
+  border: 2px solid #CCCCCC;
+  border-radius: 5px;
+
+  &__field {
+    margin-bottom: 10px;
+  }
+
+  &__actions {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  &__left {
+    float: left;
+    width: 40%;
+
+    & > h2 {
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+      font-size: 34px;
+      font-weight: bold;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 290px;
+        margin-top: 5px;
+        border-bottom: 1px solid #38aef0;
+      }
+    }
+
+    & > h5 {
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 200;
+    }
+  }
+
+  &__right {
+    margin-left: 82px;
+    width: 100%;
+
+    & input {
+      width: 100%;
+      background-color: floralwhite;
+      height: 45px;
+    }
+  }
+}
+
+.sign-up-btn[type=submit] {
+  background-color: darkturquoise;
+  border-radius: 10px;
+  color: white;
+}
+
+//ログインページ
+.sign-in-container {
+  display: flex;
+}
+
+.sign-in {
+  width: 900px;
+  margin: 50px auto;
+  padding: 50px;
+  background-color: #CCCCCC;
+  border: 2px solid #CCCCCC;
+  border-radius: 5px;
+
+  &__field {
+    margin-bottom: 10px;
+  }
+
+  &__actions {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  &__left {
+    float: left;
+    width: 40%;
+
+    & > h2 {
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+      font-size: 38px;
+      font-weight: bold;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 120px;
+        margin-top: 5px;
+        border-bottom: 1px solid #38aef0;
+      }
+    }
+
+    & > h5 {
+      margin-bottom: 20px;
+      font-size: 13px;
+      font-weight: 200;
+    }
+  }
+
+  &__right {
+    margin-left: 200px;
+    width: 100%;
+
+    & input {
+      width: 100%;
+      background-color: floralwhite;
+      height: 45px;
+    }
+  }
+}
+
+.sign-in-btn[type=submit] {
+  background-color: darkturquoise;
+  border-radius: 10px;
+  color: white;
+}
+
+
+//list-render
+
+.link-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+
+  &__content {
+    margin: 0 auto;
+
+    & a {
+      text-decoration: none;
+      color: #2E2F30;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
