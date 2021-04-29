@@ -11,7 +11,7 @@ import "channels"
 // Bootstrap
 //= require bootstrap-sprockets
 Rails.start()
-Turbolinks.start()
+// Turbolinks.start()
 ActiveStorage.start()
 require("../menu")
 // require("../swiper")
