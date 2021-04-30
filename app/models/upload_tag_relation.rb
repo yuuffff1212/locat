@@ -1,0 +1,2 @@
+class UploadTagRelation < ApplicationRecord
+end

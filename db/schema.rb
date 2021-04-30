@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_28_033237) do
+ActiveRecord::Schema.define(version: 2021_04_30_071523) do
+
+  create_table "tags", charset: "utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "upload_tag_relations", charset: "utf8", force: :cascade do |t|
+    t.bigint "upload_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tag_id"], name: "index_upload_tag_relations_on_tag_id"
+    t.index ["upload_id"], name: "index_upload_tag_relations_on_upload_id"
+  end
+
+  create_table "uploads", charset: "utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "text", null: false
+    t.text "url"
+    t.text "working_day"
+    t.text "day_off"
+    t.integer "cafe_wifi_id", null: false
+    t.integer "cafe_charging_id", null: false
+    t.integer "cafe_smoking_id", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_uploads_on_user_id"
+  end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,4 +55,7 @@ ActiveRecord::Schema.define(version: 2021_04_28_033237) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "upload_tag_relations", "tags"
+  add_foreign_key "upload_tag_relations", "uploads"
+  add_foreign_key "uploads", "users"
 end
