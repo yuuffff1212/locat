@@ -9,10 +9,11 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 // Bootstrap
+//= require underscore
+//= require gmaps/google
 //= require bootstrap-sprockets
 Rails.start()
 // Turbolinks.start()
 ActiveStorage.start()
 require("../menu")
-// require("../swiper")
 require("../slick")

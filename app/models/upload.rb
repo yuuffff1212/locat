@@ -1,5 +1,6 @@
 class Upload < ApplicationRecord
   has_one_attached :image
+  has_one :map
   belongs_to :user
   has_many :tags, through: :upload_tag_relations
   has_many :upload_tag_relations
