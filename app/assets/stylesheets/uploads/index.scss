@@ -63,7 +63,7 @@ $black: black;
     font-size: 25px;
     color: black;
     font-weight: bold;
-    background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, white 50%);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, white 50%);
     background-position: 0 0;
     background-size: 200% auto;
     transition: 0.5s;
@@ -99,7 +99,7 @@ $black: black;
     position: relative;
     line-height: 40px;
     text-decoration: none;
-    background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, white 50%);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, white 50%);
     background-position: 0 0;
     background-size: 200% auto;
     transition: 0.5s;
@@ -131,6 +131,7 @@ $black: black;
 
     & > img {
       border-radius: 50%;
+      text-decoration: none;
     }
   }
 }
@@ -156,15 +157,17 @@ $black: black;
   background: #3879D9;
 }
 
-.search_container input[type="text"]{
+.search_container input[type="text"] {
   border: none;
   height: 2.0em;
   background: #3879D9;
 }
+
 .search_container input[type="text"]:focus {
   outline: 0;
 }
-.search_container input[type="submit"]{
+
+.search_container input[type="submit"] {
   cursor: pointer;
   font-family: FontAwesome;
   font-size: 1.3em;
@@ -175,8 +178,9 @@ $black: black;
   height: 2.5em;
   right: 8px;
   top: -10px;
-  outline : none;
+  outline: none;
 }
+
 .search_container ::-webkit-input-placeholder {
   color: #fff;
 }
@@ -186,15 +190,95 @@ $black: black;
 .title-content {
   display: flex;
 }
+
 .main-title {
   display: block;
   margin: 0 auto;
 }
 
 .main-content {
-  padding: 0 10vw;
+  display: flex;
+  width: 850px;
+  margin: 0 auto;
+
+  &__category {
+    padding-right: 30px;
+    background-color: beige;
+    width: calc(900px - 650px);
+  }
 }
 
+.content-page {
+  width: calc(900px - 250px);
+  padding: 20px 20px;
+  background-color: bisque;
+  height: 480px;
+}
+
+.upload-link {
+  text-decoration: none;
+  color: black;
+}
+
+.upload-contents-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  filter: drop-shadow(0px 0px 10px black);
+}
+
+.upload-img-contents {
+  height: 250px;
+}
+
+.upload-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.upload-contents-detail {
+  padding: 15px 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.upload-name {
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.upload-tags {
+  border: 1px solid gray;
+  border-radius: 10%;
+  padding: 8px 8px;
+  background: lightgoldenrodyellow;
+  color: gray;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.upload-contents-explain {
+  padding: 15px 12px;
+}
+
+.upload-explain {
+  margin-left: 20px;
+  color: gray;
+  font-size: 15px;
+}
+
+.upload-user {
+  margin: 15px 25px 5px;
+
+  &__name {
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+    color: black;
+  }
+}
 //投稿ボタン
 
 .uploads-btn {
