@@ -1,0 +1,295 @@
+////// Place all the styles related to the uploads controller here.
+////// They will automatically be included in application.scss.
+////// You can use Sass (SCSS) here: https://sass-lang.com/
+$white: white;
+$black: black;
+
+//スライドページ
+
+*:focus {
+  outline: none;
+}
+
+#top-container {
+  height: 450px;
+  padding: 10px 0;
+  overflow: hidden;
+  background: #BBBBBB;
+  position: relative;
+}
+
+.top-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.top-slide {
+  width: 630px;
+  height: 100%;
+  float: left;
+  background: $white;
+  margin: 0 4px;
+  z-index: 1;
+}
+
+.top-image {
+  height: 260px;
+  overflow: hidden;
+  background-color: $white;
+
+  & > img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.projects-detail {
+  padding: 18px 20px 20px;
+  background-color: $white;
+  position: relative;
+}
+
+.icon-name {
+  text-align: center;
+  width: 100%;
+  font-weight: 600;
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  &__style {
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, white 50%);
+    background-position: 0 0;
+    background-size: 200% auto;
+    transition: 0.5s;
+    text-decoration: none;
+
+    &:hover {
+      background-position: -100% 0;
+      color: cadetblue;
+    }
+  }
+
+  &__tag {
+    border: 2px solid;
+    color: grey;
+    border-radius: 40%;
+    padding: 10px 10px;
+  }
+}
+
+.user-name {
+  padding-left: 40px;
+  font-weight: 300;
+  bottom: 20px;
+  line-height: 10px;
+  display: flex;
+
+  &__detail {
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: $black;
+    display: inline-block;
+    position: relative;
+    line-height: 40px;
+    text-decoration: none;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, white 50%);
+    background-position: 0 0;
+    background-size: 200% auto;
+    transition: 0.5s;
+
+    &:hover {
+      background-position: -100% 0;
+      color: cadetblue;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: #333;
+      transform: scale(0, 1);
+      transform-origin: left top;
+      transition: transform .3s;
+    }
+
+    &:hover::after {
+      transform: scale(1, 1);
+    }
+  }
+
+  &__image {
+
+    & > img {
+      border-radius: 50%;
+      text-decoration: none;
+    }
+  }
+}
+
+//検索フォーム
+
+.search-content {
+  padding: 48px 40px;
+  align-items: center;
+  display: flex;
+}
+
+.search_container {
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.2em;
+  width: 400px;
+  overflow: hidden;
+  background: #3879D9;
+}
+
+.search_container input[type="text"] {
+  border: none;
+  height: 2.0em;
+  background: #3879D9;
+}
+
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+
+.search_container input[type="submit"] {
+  cursor: pointer;
+  font-family: FontAwesome;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: #fff;
+  position: absolute;
+  height: 2.5em;
+  right: 8px;
+  top: -10px;
+  outline: none;
+}
+
+.search_container ::-webkit-input-placeholder {
+  color: #fff;
+}
+
+//メイン投稿一覧
+
+.title-content {
+  display: flex;
+}
+
+.main-title {
+  display: block;
+  margin: 0 auto;
+}
+
+.main-content {
+  display: flex;
+  width: 850px;
+  margin: 0 auto;
+
+  &__category {
+    padding-right: 30px;
+    background-color: beige;
+    width: calc(900px - 650px);
+  }
+}
+
+.content-page {
+  width: calc(900px - 250px);
+  padding: 20px 20px;
+  background-color: bisque;
+  height: 480px;
+}
+
+.upload-link {
+  text-decoration: none;
+  color: black;
+}
+
+.upload-contents-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  filter: drop-shadow(0px 0px 10px black);
+}
+
+.upload-img-contents {
+  height: 250px;
+}
+
+.upload-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.upload-contents-detail {
+  padding: 15px 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.upload-name {
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.upload-tags {
+  border: 1px solid gray;
+  border-radius: 10%;
+  padding: 8px 8px;
+  background: lightgoldenrodyellow;
+  color: gray;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.upload-contents-explain {
+  padding: 15px 12px;
+}
+
+.upload-explain {
+  margin-left: 20px;
+  color: gray;
+  font-size: 15px;
+}
+
+.upload-user {
+  margin: 15px 25px 5px;
+
+  &__name {
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+    color: black;
+  }
+}
+//投稿ボタン
+
+.uploads-btn {
+  width: 100px;
+  background: #F7F7F7;
+  text-align: center;
+  border-radius: 5%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+

@@ -62,3 +62,9 @@ gem 'pry-rails'
 gem "jquery-rails"
 gem "devise"
 gem 'bootstrap', '~> 5.0.0.beta3'
+gem 'active_hash'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+gem "gmaps4rails"
+gem "geocoder"
+gem "gon"

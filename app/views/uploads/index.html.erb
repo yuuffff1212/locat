@@ -1,0 +1,128 @@
+<%= render "shared/header" %>
+
+<div id="global-container">
+  <div id="main-container">
+    <div id="top-container">
+      <div class="top-wrapper">
+        <div class="top-slide">
+          <div class="top-image">
+            <img src="assets/image-1.jpg" alt="">
+          </div>
+          <div class="projects-detail">
+            <div class="icon-name">
+              <a class="icon-name__style" href="#">icon-name</a>
+              <div class="icon-name__tag">東京</div>
+            </div>
+          </div>
+          <p class="user-name">
+            <a class="user-name__image" href="#">
+              <img src="assets/image-4.jpg" width="40" height="40" alt="">
+            </a>
+            <a class="user-name__detail" href="#">user</a>
+          </p>
+        </div>
+        <div class="top-slide">
+          <div class="top-image">
+            <img src="assets/image-2.jpg" alt="">
+          </div>
+          <div class="projects-detail">
+            <div class="icon-name">
+              <a class="icon-name__style" href="#">icon-name</a>
+              <div class="icon-name__tag">東京</div>
+            </div>
+          </div>
+          <p class="user-name">
+            <a class="user-name__image" href="#">
+              <img src="assets/image-4.jpg" width="40" height="40" alt="">
+            </a>
+            <a class="user-name__detail" href="#">user</a>
+          </p>
+        </div>
+        <div class="top-slide">
+          <div class="top-image">
+            <img src="assets/image-4.jpg">
+          </div>
+          <div class="projects-detail">
+            <div class="icon-name">
+              <a class="icon-name__style" href="#">icon-name</a>
+              <div class="icon-name__tag">東京</div>
+            </div>
+          </div>
+          <p class="user-name">
+            <a class="user-name__image" href="#">
+              <img src="assets/image-4.jpg" width="40" height="40" alt="">
+            </a>
+            <a class="user-name__detail" href="#">user</a>
+          </p>
+        </div>
+        <div class="top-slide">
+          <div class="top-image">
+            <img src="assets/image-5.jpg">
+          </div>
+          <div class="projects-detail">
+            <div class="icon-name">
+              <a class="icon-name__style" href="#">icon-name</a>
+              <div class="icon-name__tag">東京</div>
+            </div>
+          </div>
+          <p class="user-name">
+            <a class="user-name__image" href="#">
+              <img src="assets/image-4.jpg" width="40" height="40" alt="">
+            </a>
+            <a class="user-name__detail" href="#">user</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id class="main-page">
+    <div class="search-content">
+      <form method="get" action="#" class="search_container">
+        <input type="text" size="75" placeholder="　タグや地名で検索">
+        <input type="submit" value="&#xf002">
+      </form>
+    </div>
+    <div class="title-content">
+      <h1 class="main-title">新規カフェ情報一覧</h1>
+    </div>
+    <div class="main-content">
+      <div class="main-content__category">
+        <!--      後から実装-->
+      </div>
+      <div class="content-page">
+        <% @uploads.each do |upload| %>
+          <%= link_to upload_path(upload.id), class: "upload-link", method: :get do %>
+            <div class="upload-contents-wrapper">
+              <div class="upload-img-contents">
+                <%= image_tag upload.image, class: "upload-img" if upload.image.attached? %>
+              </div>
+              <div class="upload-contents-detail">
+                <div class="upload-name"><%= upload.title %></div>
+                <% upload.tags.each do |tag| %>
+                  <div class="upload-tags">#<%= tag.name %></div>
+                <% end %>
+              </div>
+              <div class="upload-contents-explain">
+                <div class="upload-explain"><%= upload.text %></div>
+              </div>
+              <p class="upload-user">
+                <a class="user-name__image" href="#">
+                  <img src="assets/image-4.jpg" width="40" height="40" alt="">
+                </a>
+                <%= link_to upload.user.name, "#", class: "upload-user__name" %>
+              </p>
+            </div>
+          <% end %>
+          </div>
+        <% end %>
+        </div>
+  </div>
+  <%= link_to('uploads/new', class: 'uploads-btn') do %>
+    <%= image_tag 'post.png', size: '70x70', class: "uploads-btn-icon" %>
+  <% end %>
+</div>
+
+
+
+
+
