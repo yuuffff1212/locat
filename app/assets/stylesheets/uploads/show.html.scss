@@ -1,0 +1,88 @@
+.main {
+  padding: 0 20vw;
+}
+
+.main-header {
+  padding: 15px 0 5px;
+  border-bottom: 3px solid lightsteelblue;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-tags {
+  border: 1px solid gray;
+  margin: 15px 5px 5px;
+  border-radius: 10%;
+  padding: 8px 5px;
+  background: lightgoldenrodyellow;
+  color: gray;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.contents-main {
+  //background: lavender;
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+.contents-row {
+  margin-top: 15px;
+  padding-bottom: 10px;
+}
+
+.contents-post {
+  height: 300px;
+}
+
+.contents-img {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  position: relative;
+}
+
+.contents-name {
+  margin-left: 20px;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  bottom: 10px;
+  filter: drop-shadow(0px 0px 10px black);
+}
+
+.contents-detail {
+  padding-bottom: 5px;
+  border-bottom: 3px solid black;
+  margin-top: 12px;
+
+  &__title {
+    font-weight: bold;
+    margin-left: 8px;
+  }
+}
+
+.contents-info {
+  display: flex;
+  border-bottom: 3px solid black;
+}
+.contents-features {
+  padding: 20px 20px;
+
+  &__detail {
+    border: 1px solid black;
+    width: 120px;
+    padding: 10px 12px;
+    color: white;
+    background: black;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.text-detail {
+  margin-left: 20px;
+  padding: 30px 0;
+  font-weight: bold;
+}
+

@@ -249,6 +249,11 @@ $black: black;
   margin-left: 20px;
 }
 
+.tag-container {
+  margin-left: 30px;
+  display: flex;
+}
+
 .upload-tags {
   border: 1px solid gray;
   border-radius: 10%;
@@ -257,6 +262,7 @@ $black: black;
   color: gray;
   font-weight: bold;
   font-size: 15px;
+  margin: 0 5px;
 }
 
 .upload-contents-explain {
