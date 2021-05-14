@@ -1,16 +1,18 @@
 class UploadsController < ApplicationController
   def index
     @uploads = Upload.all.order(created_at: :desc)
+    @tag_list = Tag.all
   end
 
   def new
-    @upload_form = UploadForm.new
+    @upload = UploadForm.new
   end
 
   def create
-    @upload_form = UploadForm.new(upload_params)
-    if @upload_form.valid?
-      @upload_form.save
+    @upload = UploadForm.new(upload_params)
+    tag_list = params[:upload_form][:name].split(",")
+    if @upload.valid?
+      @upload.save(tag_list)
       redirect_to root_path
     else
       render new
@@ -18,6 +20,18 @@ class UploadsController < ApplicationController
   end
 
   def show
+    @upload = Upload.find(params[:id])
+    @tag = @upload.tags
+  end
+
+  def destroy
+    @upload = Upload.find(params[:id])
+    @upload.image.purge if @upload.image.attached?
+    if @upload.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
 
   end
 
