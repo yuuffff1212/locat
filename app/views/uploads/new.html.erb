@@ -3,7 +3,7 @@
 <div class="upload-form-contents">
   <div class="upload-form">
     <h2 class="upload-form__title">カフェの情報を入力</h2>
-    <%= form_with(model: @upload_form, url: uploads_path, local: true)  do |f| %>
+    <%= form_with(model: @upload, url: uploads_path, local: true)  do |f| %>
 
       <%# カフェ画像 %>
       <div class="img-upload">
@@ -37,7 +37,7 @@
             タグ
             <span class="important">必須</span>
           </div>
-          <%= f.text_field :name, class: "uploads-field", id: "cafe-tag", placeholder: "#東京 #充電カフェ", maxlength: "20" %>
+          <%= f.text_field :name, class: "uploads-field", id: "cafe-tag", placeholder: "タグを入力。複数の場合は,で区切る", maxlength: "20" %>
         </div>
         <div class="upload-text">
           URL
