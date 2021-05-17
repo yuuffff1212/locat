@@ -12,8 +12,8 @@ class UploadForm
     validates :user_id
     validates :image
     validates :name
-    validates :upload_id, presence: true
-    validates :tag_id, presence: true
+    # validates :upload_id
+    # validates :tag_id
   end
 
   with_options numericality: { other_than: 0 } do
@@ -22,15 +22,56 @@ class UploadForm
     validates :cafe_smoking_id
   end
 
+  delegate :persisted?, to: :upload
+
+  def initialize(attributes = nil, upload: Upload.new)
+    @upload = upload
+    attributes ||= default_attributes
+    super(attributes)
+  end
+
   def save(tag_list)
-    upload = Upload.create(title: title, text: text, url: url, working_day: working_day, day_off: day_off, cafe_wifi_id: cafe_wifi_id, cafe_charging_id: cafe_charging_id, cafe_smoking_id: cafe_smoking_id, user_id: user_id, image: image)
-    # map = Map.create(address: address, latitude: latitude, longitude: longitude, upload_id: upload_id)
-    tag_list.each do |tag_name|
-      tag = Tag.where(name: tag_name).first_or_initialize
-      tag.save
 
-      UploadTagRelation.create(upload_id: upload.id, tag_id: tag.id)
+    ActiveRecord::Base.transaction do
+      @upload.update(title: title, text: text, url: url, working_day: working_day, day_off: day_off, cafe_wifi_id: cafe_wifi_id, cafe_charging_id: cafe_charging_id, cafe_smoking_id: cafe_smoking_id, user_id: user_id, image: image)
 
+      @upload.upload_tag_relations.each do |tag|
+        tag.delete
+      end
+
+      tag_list.each do |tag_name|
+        tag = Tag.where(name: tag_name).first_or_initialize
+        tag.save
+
+        upload_tag_relation = UploadTagRelation.where(upload_id: upload.id, tag_id: tag.id).first_or_initialize
+        upload_tag_relation.update(upload_id: upload.id, tag_id: tag.id)
+
+      end
     end
+    # upload = Upload.create(title: title, text: text, url: url, working_day: working_day, day_off: day_off, cafe_wifi_id: cafe_wifi_id, cafe_charging_id: cafe_charging_id, cafe_smoking_id: cafe_smoking_id, user_id: user_id, image: image)
+    # map = Map.create(address: address, latitude: latitude, longitude: longitude, upload_id: upload_id)
+  end
+
+  def to_model
+    upload
+  end
+
+  private
+
+  attr_reader :upload
+
+  def default_attributes
+    {
+      title: upload.title,
+      text: upload.text,
+      url: upload.url,
+      working_day: upload.working_day,
+      day_off: upload.day_off,
+      cafe_wifi_id: upload.cafe_wifi_id,
+      cafe_charging_id: upload.cafe_charging_id,
+      cafe_smoking_id: upload.cafe_smoking_id,
+      image: upload.image,
+      name: upload.tags.pluck(:name).join(",")
+    }
   end
 end

@@ -19,7 +19,7 @@
         <div class="contents-img" style="background-image: url(<%=url_for(@upload.image) %>)">
           <% if user_signed_in? && current_user.id == @upload.user_id %>
             <div class="upload-manage">
-              <%= link_to "編集する", "#", class: "upload-btn" %>
+              <%= link_to "編集する", edit_upload_path(@upload.id), class: "upload-btn" %>
               <%= link_to "削除する", upload_path(@upload.id), class: "upload-btn", method: :delete %>
             </div>
           <% end %>

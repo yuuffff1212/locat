@@ -5,23 +5,40 @@ class UploadsController < ApplicationController
   end
 
   def new
-    @upload = UploadForm.new
+    @upload_form = UploadForm.new
   end
 
   def create
-    @upload = UploadForm.new(upload_params)
-    tag_list = params[:upload_form][:name].split(",")
-    if @upload.valid?
-      @upload.save(tag_list)
+    @upload_form = UploadForm.new(upload_params)
+    tag_list = params[:upload][:name].split(",")
+    if @upload_form.valid?
+      @upload_form.save(tag_list)
       redirect_to root_path
     else
-      render new
+      render :new
     end
   end
 
   def show
     @upload = Upload.find(params[:id])
     @tag = @upload.tags
+  end
+
+  def edit
+    @upload = Upload.find(params[:id])
+    @upload_form = UploadForm.new(upload: @upload)
+  end
+
+  def update
+    @upload = Upload.find(params[:id])
+    @upload_form = UploadForm.new(upload_params, upload: @upload)
+    tag_list = params[:upload][:name].split(",")
+    if @upload_form.valid?
+      @upload_form.save(tag_list)
+      redirect_to upload_path(@upload.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -38,6 +55,6 @@ class UploadsController < ApplicationController
   private
 
   def upload_params
-    params.require(:upload_form).permit(:title, :text, :url, :working_day, :day_off, :cafe_wifi_id, :cafe_charging_id, :cafe_smoking_id, :image, :name).merge(user_id: current_user.id)
+    params.require(:upload).permit(:title, :text, :url, :working_day, :day_off, :cafe_wifi_id, :cafe_charging_id, :cafe_smoking_id, :image, :name).merge(user_id: current_user.id)
   end
 end
