@@ -2,8 +2,8 @@
 
 <div class="upload-form-contents">
   <div class="upload-form">
-    <h2 class="upload-form__title">カフェの情報を入力</h2>
-    <%= form_with(model: @upload_form, url: uploads_path, local: true)  do |f| %>
+    <h2 class="upload-form__title">カフェの情報を編集</h2>
+    <%= form_with(model: @upload_form, url: upload_path, local: true)  do |f| %>
 
       <%# カフェ画像 %>
       <div class="img-upload">
@@ -75,7 +75,7 @@
       </div>
       <%# 投稿ボタン %>
       <div class="upload-btn-contents">
-        <%= f.submit "投稿する", class: "uploads-form-btn" %>
+        <%= f.submit "更新する", class: "uploads-form-btn" %>
         <%= link_to 'トップページへ', root_path, class: "back-btn" %>
       </div>
     <% end %>

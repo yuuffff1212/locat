@@ -127,8 +127,10 @@
     </div>
   </div>
 </div>
-<%= link_to('uploads/new', class: 'uploads-btn') do %>
-  <%= image_tag 'post.png', size: '70x70', class: "uploads-btn-icon" %>
+<% if user_signed_in? %>
+  <%= link_to('uploads/new', class: 'uploads-btn') do %>
+    <%= image_tag 'post.png', size: '70x70', class: "uploads-btn-icon" %>
+  <% end %>
 <% end %>
 </div>
 
