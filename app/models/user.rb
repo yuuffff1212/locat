@@ -10,6 +10,6 @@ class User < ApplicationRecord
     validates :email
     validates :password, format: {with:/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: "is invalid. Include both letters and numbers. Input half-width characters." }
     validates :name
-    validates :profile, length: { maximum: 100}
+    validates :profile, length: { maximum: 300}
   end
 end

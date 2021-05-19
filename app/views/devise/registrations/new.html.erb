@@ -33,6 +33,23 @@
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
         </div>
 
+        <div class="sign-up__field">
+          <%= f.label :profile %>
+          <%= f.text_area :profile, class: "profile-text", autofocus: true, autocomplete: "profile",rows: "5", maxlength: "300" %>
+        </div>
+
+        <div class="upload-img">
+          <div class="upload-text">
+            Icon image
+          </div>
+          <div class="sigh-up-upload">
+            <p>
+              Click to upload file
+            </p>
+            <%= f.file_field :image, class: "sigh-up-img", id: "item-image" %>
+          </div>
+        </div>
+
         <div class="sign-up__actions">
           <%= f.submit "Create Account", class:"sign-up-btn"%>
         </div>
