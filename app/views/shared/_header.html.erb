@@ -1,7 +1,7 @@
 <header class="header">
   <div id="container">
     <% if user_signed_in? %>
-      <%= link_to image_tag("home.png", class: 'home-icon'), "#" %>
+      <%= link_to image_tag("home.png", class: 'home-icon'), user_path(current_user.id) %>
     <% end %>
     <%= link_to 'locat', root_path, class: "title" %>
     <button class="menu-btn">
