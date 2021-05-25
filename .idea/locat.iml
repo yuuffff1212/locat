@@ -35,6 +35,8 @@
     <orderEntry type="library" name="slick" level="application" />
     <orderEntry type="library" name="jquery-1.11.0" level="application" />
     <orderEntry type="library" name="jquery-migrate-1.2.1" level="application" />
+    <orderEntry type="library" name="markerclusterer" level="application" />
+    <orderEntry type="library" name="infobox_packed" level="application" />
     <orderEntry type="module-library">
       <library name="actioncable (vbundled(6.1.3.1)) [path][gem]" type="rubylib">
         <properties>
@@ -583,36 +585,24 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="dotenv (vbundled(2.7.6)) [path][gem]" type="rubylib">
+      <library name="devise-i18n (vbundled(1.9.4)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
         </properties>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/dotenv-2.7.6/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/dotenv-2.7.6/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/devise-i18n-1.9.4/app" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/devise-i18n-1.9.4/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/devise-i18n-1.9.4/rails" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/dotenv-2.7.6/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/dotenv-2.7.6/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/devise-i18n-1.9.4/app" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/devise-i18n-1.9.4/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/devise-i18n-1.9.4/rails" />
         </SOURCES>
         <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/dotenv-2.7.6/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/devise-i18n-1.9.4/rails" />
         </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="dotenv-rails (vbundled(2.7.6)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/dotenv-rails-2.7.6/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/dotenv-rails-2.7.6/lib" />
-        </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
@@ -2293,8 +2283,6 @@
     <orderEntry type="library" scope="PROVIDED" name="benchmark (v0.1.1, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v2.2.16, rbenv: 3.0.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rbs (v1.0.4, rbenv: 3.0.1) [gem]" level="application" />
-    <orderEntry type="library" name="markerclusterer" level="application" />
-    <orderEntry type="library" name="infobox_packed" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />
@@ -2312,6 +2300,8 @@
         <option value="controller" />
         <option value="devise" />
         <option value="devise:controllers" />
+        <option value="devise:i18n:locale" />
+        <option value="devise:i18n:views" />
         <option value="devise:install" />
         <option value="devise:views" />
         <option value="erd:install" />
@@ -2356,6 +2346,8 @@
         <option value="controller" />
         <option value="devise" />
         <option value="devise:controllers" />
+        <option value="devise:i18n:locale" />
+        <option value="devise:i18n:views" />
         <option value="devise:install" />
         <option value="devise:views" />
         <option value="erd:install" />

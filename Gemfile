@@ -68,3 +68,4 @@ gem 'image_processing', '~> 1.2'
 gem "gmaps4rails"
 gem "geocoder"
 gem "gon"
+gem 'devise-i18n'
