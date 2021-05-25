@@ -160,8 +160,105 @@
   }
 }
 
+//ユーザー編集ページ
 
+.edit {
+  width: 900px;
+  margin: 50px auto;
+  padding: 50px;
+  border: 2px solid;
+  border-radius: 5%;
+  background: antiquewhite;
+  filter: drop-shadow(2px 4px 6px black);
 
+  &__main {
+    display: flex;
+  }
+
+  &__left {
+    width: 40%;
+    float: left;
+
+    & > h2 {
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+      font-size: 34px;
+      font-weight: bold;
+    }
+
+    & > h5 {
+      margin-bottom: 20px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+  }
+
+  &__right {
+    margin-left: 82px;
+    width: 100%;
+
+    & label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    & input {
+      width: 100%;
+      background: floralwhite;
+      height: 45px;
+    }
+
+    & > h3 {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    & p {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    & a {
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    & form.button_to {
+      width: 50%;
+      margin: 0 auto;
+
+      & input {
+        background: linear-gradient(43deg, black, transparent);
+        border-radius: 10%;
+        color: white;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__field {
+    margin-bottom: 10px;
+  }
+
+  &__actions {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+    & input {
+      background: linear-gradient(43deg, black, transparent);
+      border-radius: 10%;
+      color: white;
+      margin-bottom: 20px;
+      font-weight: bold;
+
+    }
+  }
+}
 
 
 
