@@ -13,7 +13,7 @@
   <div class="menu">
     <ul class="menu__list">
       <% if user_signed_in? %>
-        <li class="menu__name"><%= link_to '登録者情報', "#", class: "menu__link" %></li>
+        <li class="menu__name"><%= link_to '登録者情報', edit_user_registration_path, class: "menu__link" %></li>
         <li class="menu__name"><%= link_to 'お気に入りカフェ', "#", class: "menu__link" %></li>
         <li class="menu__name"><%= link_to 'フォローユーザー', "#", class: "menu__link" %></li>
         <li class="menu__name"><%= link_to 'locatについて', "#", class: "menu__link" %></li>
