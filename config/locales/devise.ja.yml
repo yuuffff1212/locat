@@ -27,6 +27,7 @@ ja:
         password_confirmation: "確認用パスワード"
         remember_me: "次回から自動的にログイン"
         name: 氏名
+        profile: プロフィール
         sex: 性別
         postcode: 郵便番号
         prefecture_code: 都道府県

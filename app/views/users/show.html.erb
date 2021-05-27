@@ -5,6 +5,9 @@
     <div class="user-content__main">
       <div class="user-content__img"><%= image_tag @user.avatar, class: "user-img" %></div>
       <div class="user-content__name"><%= @user.name %></div>
+      <% if user_signed_in? && @user == current_user %>
+        <div class="user-content__link"><%= link_to "プロフィール編集", edit_user_path(current_user.id), class: "user-link" %></div>
+      <% end %>
     </div>
     <div class="user-profile">
       <h2 class="user-profile__title">プロフィール</h2>

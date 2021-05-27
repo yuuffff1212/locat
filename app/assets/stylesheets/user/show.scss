@@ -10,6 +10,8 @@
 
   &__img {
     padding: 5px 5px;
+    display: flex;
+    justify-content: center;
   }
 
   &__name {
@@ -17,8 +19,14 @@
     justify-content: center;
     font-weight: bold;
     font-size: 20px;
-    margin-top: 5px;
+    margin: 5px 0 10px;
   }
+}
+
+.user-link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
 .user-profile {

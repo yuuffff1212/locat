@@ -4,6 +4,7 @@
   <div class="upload-form">
     <h2 class="upload-form__title">カフェの情報を入力</h2>
     <%= form_with(model: @upload_form, url: uploads_path, local: true)  do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
 
       <%# カフェ画像 %>
       <div class="img-upload">

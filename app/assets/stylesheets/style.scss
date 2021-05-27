@@ -161,6 +161,7 @@
 }
 
 //ユーザー編集ページ
+//プロフィール編集ページ
 
 .edit {
   width: 900px;
@@ -241,6 +242,13 @@
 
   &__field {
     margin-bottom: 10px;
+
+    & textarea#user_profile {
+      width: 100%;
+      background: floralwhite;
+      border: 2px solid;
+      resize: none;
+    }
   }
 
   &__actions {
@@ -256,6 +264,20 @@
       margin-bottom: 20px;
       font-weight: bold;
 
+    }
+  }
+
+  &__text {
+    font-weight: bold;
+    padding: 5px 5px;
+    margin-bottom: 10px;
+  }
+
+  &__upload {
+
+    & input#edit-image {
+      background: none;
+      margin-bottom: 10px;
     }
   }
 }
