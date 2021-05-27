@@ -8,6 +8,4 @@ class Upload < ApplicationRecord
   belongs_to :cafe_smoking
   belongs_to :cafe_charging
   belongs_to :cafe_wifi
-
-
 end

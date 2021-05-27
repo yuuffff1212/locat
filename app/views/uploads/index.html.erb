@@ -114,10 +114,8 @@
                   <div class="upload-explain"><%= upload.text %></div>
                 </div>
                 <p class="upload-user">
-                  <a class="user-name__image" href="#">
-                    <img src="assets/image-4.jpg" width="40" height="40" alt="">
-                  </a>
-                  <%= link_to upload.user.name, "#", class: "upload-user__name" %>
+                    <%= link_to image_tag(upload.user.avatar, class: "avatar-img"), user_path(upload.user.id) %>
+                    <%= link_to upload.user.name, user_path(upload.user.id), class: "upload-user__name" %>
                 </p>
               </div>
             <% end %>
