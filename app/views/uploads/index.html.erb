@@ -1,4 +1,5 @@
 <%= render "shared/header" %>
+<%= javascript_pack_tag 'index' %>
 
 <div id="global-container">
   <div id="main-container">
@@ -113,26 +114,38 @@
                 <div class="upload-contents-explain">
                   <div class="upload-explain"><%= upload.text %></div>
                 </div>
-                <p class="upload-user">
-                    <%= link_to image_tag(upload.user.avatar, class: "avatar-img"), user_path(upload.user.id) %>
-                    <%= link_to upload.user.name, user_path(upload.user.id), class: "upload-user__name" %>
-                </p>
-              </div>
             <% end %>
+            <div class="user-footer">
+              <div class="upload-user">
+                <%= link_to image_tag(upload.user.avatar, class: "avatar-img"), user_path(upload.user.id) %>
+                <%= link_to upload.user.name, user_path(upload.user.id), class: "upload-user__name" %>
+              </div>
+              <div class="favorite-content">
+                <div id="favorite">
+                  <% if user_signed_in? %>
+                    <favorite-button :user-id="<%= current_user.id %>" :uplaod-id="<%= upload.id %>"></favorite-button>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            </div>
           </div>
         <% end %>
       </div>
     </div>
   </div>
-</div>
-<% if user_signed_in? %>
-  <%= link_to('uploads/new', class: 'uploads-btn') do %>
-    <%= image_tag 'post.png', size: '70x70', class: "uploads-btn-icon" %>
+  <% if user_signed_in? %>
+    <%= link_to('uploads/new', class: 'uploads-btn') do %>
+      <%= image_tag 'post.png', size: '70x70', class: "uploads-btn-icon" %>
+    <% end %>
   <% end %>
-<% end %>
 </div>
 
 
+<script>
+    import FavoriteButton from "../../javascript/compenents/Favorite/FavoriteButton";
 
-
-
+    export default {
+        components: {FavoriteButton}
+    }
+</script>
