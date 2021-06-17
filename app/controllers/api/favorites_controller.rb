@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
 module Api
-
-  class FavoritesController < ApplicationController::API
+  class FavoritesController < ActionController::API
     before_action :authenticate_user!
 
     def index
-      render json: Favorite.filter_by_upload(params[:id]).select(:id, :user_id, :upload_id)
+      render json: Favorite.filter_by_upload(params[:upload_id]).select(:id, :user_id, :upload_id)
     end
 
     def create
@@ -15,7 +14,7 @@ module Api
     end
 
     def destroy
-      current_user.favorites.find(params[:id]).destroy
+      current_user.favorites.find(params[:id]).destroy!
       head :ok
     end
 
