@@ -9,6 +9,7 @@ module Api
     end
 
     def create
+      @uploads = Upload.find(params[:upload_id])
       current_user.favorites.create!(favorites_params)
       head :created
     end

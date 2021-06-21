@@ -276,6 +276,11 @@ $black: black;
   font-size: 15px;
 }
 
+.user-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
 .upload-user {
   margin: 15px 25px 5px;
 
@@ -285,6 +290,12 @@ $black: black;
     margin-left: 5px;
     color: black;
   }
+}
+
+.favorite-content {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
 }
 
 .avatar-img {
