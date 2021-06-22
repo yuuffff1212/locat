@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :uploads, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :favorite_uploads, through: :favorites, source: :upload
   has_one_attached :avatar
   with_options presence: true do
     validates :email

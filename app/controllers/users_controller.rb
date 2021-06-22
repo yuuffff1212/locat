@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:mypage]
 
   def show
     @user = User.find(params[:id])
+    @uploads = Upload.where(user_id: @user.id)
   end
 
   def edit
@@ -18,6 +20,20 @@ class UsersController < ApplicationController
     else
       redirect_to edit_user_path(current_user)
     end
+  end
+
+  def mypage
+    redirect_to user_path(current_user)
+  end
+
+  def tables
+    @user = User.find(params[:user_id])
+    @tables = Upload.where(user_id: @user.id)
+  end
+
+  def favorites
+    @user = User.find(params[:user_id])
+    @favorites = Favorite.where(user_id: @user.id)
   end
 
   private

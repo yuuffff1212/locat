@@ -1,0 +1,10 @@
+<div class="my_page">
+  <div class="my_page__content">
+    <h2 class="my_page__title"><%= "#{@user.name}さんのマイページ"%></h2>
+    <ul class="my_page__list">
+      <li><%= link_to "プロフィール", user_path(current_user.id), class: "menu__link" %></li>
+      <li><%= link_to "投稿一覧", user_mypage_uploads_path(@user.id) , class: "menu__link" %></li>
+      <li><%= link_to "お気に入りリスト", user_mypage_favorites_path(@user.id), class: "menu__link" %></li>
+    </ul>
+  </div>
+</div>
