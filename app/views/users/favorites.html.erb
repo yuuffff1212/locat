@@ -1,0 +1,11 @@
+<%= render "shared/header" %>
+<%= render "users/mypage" %>
+
+<div class="top-container">
+  <div class="user-wrapper">
+    <div class="user-wrapper__title"><%= "#{@user.name}さんのお気に入りカフェ一覧" %></div>
+    <div class="table">
+      <%= render partial:  "shared/favorite", collection: @favorites %>
+    </div>
+  </div>
+</div>

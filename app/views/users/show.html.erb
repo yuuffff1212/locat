@@ -1,4 +1,5 @@
 <%= render "shared/header" %>
+<%= render "users/mypage" %>
 
 <div class="top-container">
   <div class="user-content">
@@ -12,12 +13,6 @@
     <div class="user-profile">
       <h2 class="user-profile__title">プロフィール</h2>
       <div class="user-profile__name"><%= @user.profile %></div>
-    </div>
-  </div>
-  <div class="user-wrapper">
-    <div class="user-wrapper__title"><%= "#{@user.name}さんのおすすめカフェ一覧" %></div>
-    <div class="table">
-      <%= render partial: "shared/upload", collection: @user.uploads %>
     </div>
   </div>
 </div>

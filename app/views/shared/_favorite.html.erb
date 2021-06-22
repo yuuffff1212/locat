@@ -1,0 +1,10 @@
+<div class="card">
+  <%= link_to upload_path(favorite.upload), class: "card__link", method: :get do %>
+    <div class="card__top">
+      <%= image_tag favorite.upload.image, class: :card__img %>
+    </div>
+    <div class="card__body">
+      <%= favorite.upload.title %>
+    </div>
+  <% end %>
+</div>

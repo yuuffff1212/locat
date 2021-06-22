@@ -4,13 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :uploads
+  has_many :uploads, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_uploads, through: :favorites, source: :upload
   has_one_attached :avatar
   with_options presence: true do
     validates :email
-    validates :password, format: {with:/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: "is invalid. Include both letters and numbers. Input half-width characters." }, allow_blank: true
+    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: "is invalid. Include both letters and numbers. Input half-width characters." }, allow_blank: true
     validates :name
-    validates :profile, length: { maximum: 300}
+    validates :profile, length: { maximum: 300 }
     validates :avatar
   end
 
