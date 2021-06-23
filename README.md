@@ -4,7 +4,7 @@
 
 ## 概要
 
-**・外出先で充電やWifiが完備されているカフェを探したい時に利用できるアプリケーションになっております。基本的な投稿機能や投稿に対するタグなどから、カフェの情報なども検索できるようになっております。**
+外出先で充電やWifiが完備されているカフェを探したい時に利用できるアプリケーションになっております。基本的な投稿機能や投稿に対するタグなどから、カフェの情報なども検索できるようになっております。
 
 </br>
 
@@ -21,6 +21,7 @@
 * フロントエンド 
    * HTML/SCSS
    * Javascript
+   * JQuery
    * Vue.js 2.6.14
 
 * バックエンド
@@ -32,32 +33,37 @@
 * インフラ環境
    * Docker / Docker-compose
    * AWS 
-   * CircleCI
+   * CircleCI (CI/CD)
+   * MySQL2 0.5.3 /Puma/Nginx
    * Terraform
+
+## ER図
+
+<img src = "https://github.com/yuuffff1212/locat/blob/master/locat.ER%E5%9B%B3.png">
 
 ## 完了済みの実装一覧
 
+* 基本機能
+  * Deviseを使用した新規登録・ログイン・ログアウト機能
+  * マイページ機能
+    * プロフィール表示・プロフィール編集機能
+    * マイページでプロフィール・投稿一覧・お気に入り一覧表示の切り替え機能
+* 投稿機能
+  * 新規投稿機能
+    * active_storageを使用した画像投稿機能
+    * ActiveHash、FormObjectを使用した投稿機能
+    * タグ付け投稿機能
+  * 投稿に対する「いいね」機能 (非同期通信/Vue.js axios)
 
+* その他
+  * メニューバーのハンバーガーメニュー(JQuery)
 
-<1> **Deviseを用いたユーザーの登録機能**
+## 現在実装している機能
 
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* ユーザーフォロー機能(非同期処理/Vue.js axios)
+* タグから投稿を検索できる
+* いいね数に応じたランキング形式の投稿一覧表示機能
+* GoogleMapApiによる地図の表示
+* 開発環境にDocker/Docker-composeの導入
+* CircleCi(CI/CD)による自動デプロイ
+* Terraformによるインフラ環境のコード化
