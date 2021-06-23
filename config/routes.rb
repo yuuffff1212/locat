@@ -8,17 +8,19 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update] do
-    collection do
-      get :favorites
+    member do
+      get :following, :follower, :favorites
     end
     get '/mypage' => 'users#mypage'
     get '/mypage/uploads' => 'users#tables'
     get '/mypage/favorites' => 'users#favorites'
   end
 
+  resources :relationships, only: [:create, :destroy]
 
   namespace :api, { format: 'json' } do
     resources :favorites, only: [:index, :create, :destroy]
+    resources :relationships, only: [:index, :create, :destroy]
   end
 
 end
