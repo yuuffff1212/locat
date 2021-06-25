@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div v-if="isRelationshiped" @click="deleteRelationship()" class="btn btn-bg follow-followed">
-      <i class="fas fa-user-minus"></i> フォロー解除
+    <div v-if="isRelationshiped" @click="deleteRelationship()">
+      <i class="unfollow">フォロー中</i>
     </div>
-    <div v-else @click="registerRelationship()" class="btn btn-bg" style="margin:0;">
-      <i class="fas fa-user-plus"></i> フォローする
+    <div v-else @click="registerRelationship()">
+      <i class="follow">フォローする</i>
     </div>
   </div>
 </template>
@@ -62,3 +62,27 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.follow {
+  border: 2px solid black;
+  color: white;
+  background: black;
+  border-radius: 30px;
+  padding: 8px 30px;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  }
+.unfollow {
+  border: 2px solid cornflowerblue;
+  color: snow;
+  background: cornflowerblue;
+  border-radius: 30px;
+  padding: 8px 30px;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+</style>

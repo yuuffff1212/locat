@@ -7,7 +7,7 @@
       </span>
     </div>
     <div v-else @click="registerFavorite()" class="container">
-      <span class="favorites">いいね!</span>
+      <span class="favorites">いいねする!</span>
       <span class="counter">
         <span class="counterBefore"></span>{{ count }}
       </span>

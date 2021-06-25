@@ -18,11 +18,12 @@ module Api
       current_user.active_relationships.find(params[:id]).destroy!
       head :ok
     end
+
+    private
+
+    def relationships_params
+      params.require(:relationship).permit(:followed_id)
+    end
   end
 
-  private
-
-  def relationships_params
-    params.require(:relationship).permit(:followed_id)
-  end
 end
