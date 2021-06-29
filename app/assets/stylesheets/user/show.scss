@@ -1,11 +1,13 @@
+//詳細ページ
 .user-content {
-  padding: 40px;
+  padding: 15px 30px;
   display: flex;
   background: floralwhite;
 
   &__main {
     padding: 10px 10px;
     filter: drop-shadow(2px 4px 6px black);
+    margin-top: 35px;
   }
 
   &__img {
@@ -34,7 +36,7 @@
   margin-left: 20px;
   border: 2px solid black;
   border-radius: 5%;
-  height: 25vh;
+  height: 20vh;
   filter: drop-shadow(2px 4px 6px black);
   width: 35vw;
 
@@ -111,6 +113,64 @@
   }
 }
 
-a{
+//フォロー、フォロワー
+
+.relationship-link {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+#relation-content {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 8px;
+}
+
+.relation {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: bold;
+}
+
+.user-block {
+  padding: 10px 8px;
+}
+
+a {
   padding: 0;
 }
+
+.user-card {
+  width: calc((100% - 50px) / 4);
+  margin-bottom: 40px;
+  filter: drop-shadow(2px 4px 6px black);
+  background: floralwhite;
+  border-radius: 5%;
+  height: 10vh;
+
+  &__link {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+

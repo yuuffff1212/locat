@@ -1,7 +1,4 @@
                                   Prefix Verb   URI Pattern                                                                                       Controller#Action
-                           api_favorites GET    /api/favorites(.:format)                                                                          api/favorites#index {:format=>/json/}
-                                         POST   /api/favorites(.:format)                                                                          api/favorites#create {:format=>/json/}
-                            api_favorite DELETE /api/favorites/:id(.:format)                                                                      api/favorites#destroy {:format=>/json/}
                         new_user_session GET    /users/sign_in(.:format)                                                                          devise/sessions#new
                             user_session POST   /users/sign_in(.:format)                                                                          devise/sessions#create
                     destroy_user_session DELETE /users/sign_out(.:format)                                                                         devise/sessions#destroy
@@ -17,7 +14,6 @@
                                          PUT    /users(.:format)                                                                                  devise/registrations#update
                                          DELETE /users(.:format)                                                                                  devise/registrations#destroy
                                          POST   /users(.:format)                                                                                  devise/registrations#create
-                           uploads_index GET    /uploads/index(.:format)                                                                          uploads#index
                                     root GET    /                                                                                                 uploads#index
                         upload_favorites DELETE /uploads/:upload_id/favorites(.:format)                                                           favorites#destroy
                                          POST   /uploads/:upload_id/favorites(.:format)                                                           favorites#create
@@ -29,10 +25,24 @@
                                          PATCH  /uploads/:id(.:format)                                                                            uploads#update
                                          PUT    /uploads/:id(.:format)                                                                            uploads#update
                                          DELETE /uploads/:id(.:format)                                                                            uploads#destroy
+                          following_user GET    /users/:id/following(.:format)                                                                    users#following
+                          followers_user GET    /users/:id/followers(.:format)                                                                    users#followers
+                          favorites_user GET    /users/:id/favorites(.:format)                                                                    users#favorites
+                             user_mypage GET    /users/:user_id/mypage(.:format)                                                                  users#mypage
+                     user_mypage_uploads GET    /users/:user_id/mypage/uploads(.:format)                                                          users#tables
+                   user_mypage_favorites GET    /users/:user_id/mypage/favorites(.:format)                                                        users#favorites
                                edit_user GET    /users/:id/edit(.:format)                                                                         users#edit
                                     user GET    /users/:id(.:format)                                                                              users#show
                                          PATCH  /users/:id(.:format)                                                                              users#update
                                          PUT    /users/:id(.:format)                                                                              users#update
+                           relationships POST   /relationships(.:format)                                                                          relationships#create
+                            relationship DELETE /relationships/:id(.:format)                                                                      relationships#destroy
+                           api_favorites GET    /api/favorites(.:format)                                                                          api/favorites#index {:format=>/json/}
+                                         POST   /api/favorites(.:format)                                                                          api/favorites#create {:format=>/json/}
+                            api_favorite DELETE /api/favorites/:id(.:format)                                                                      api/favorites#destroy {:format=>/json/}
+                       api_relationships GET    /api/relationships(.:format)                                                                      api/relationships#index {:format=>/json/}
+                                         POST   /api/relationships(.:format)                                                                      api/relationships#create {:format=>/json/}
+                        api_relationship DELETE /api/relationships/:id(.:format)                                                                  api/relationships#destroy {:format=>/json/}
            rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                           action_mailbox/ingresses/postmark/inbound_emails#create
               rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                              action_mailbox/ingresses/relay/inbound_emails#create
            rails_sendgrid_inbound_emails POST   /rails/action_mailbox/sendgrid/inbound_emails(.:format)                                           action_mailbox/ingresses/sendgrid/inbound_emails#create

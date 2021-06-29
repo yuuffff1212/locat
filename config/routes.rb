@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update] do
     member do
-      get :following, :follower, :favorites
+      get :following, :followers, :favorites
     end
     get '/mypage' => 'users#mypage'
     get '/mypage/uploads' => 'users#tables'

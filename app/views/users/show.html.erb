@@ -7,7 +7,7 @@
     <div class="user-content__main">
       <div class="user-content__img"><%= image_tag @user.avatar, class: "user-img" %></div>
       <div class="user-content__name"><%= @user.name %></div>
-      <div id="relationship">
+      <div id="relationship" style="margin-bottom: 20px">
         <% if user_signed_in? && @user != current_user %>
           <relationship-button :follower-id="<%= current_user.id %>" :followed-id="<%= @user.id %>"></relationship-button>
         <% end %>
@@ -16,9 +16,29 @@
         <div class="user-content__link"><%= link_to "プロフィール編集", edit_user_path(current_user.id), class: "user-link" %></div>
       <% end %>
     </div>
-    <div class="user-profile">
-      <h2 class="user-profile__title">プロフィール</h2>
-      <div class="user-profile__name"><%= @user.profile %></div>
+    <div class="user-block">
+      <div id="relation-content">
+        <%= link_to following_user_path(@user.id), class: "relationship-link", method: :get do %>
+          <div class="relation">
+            <div class="relation__count">
+              <%= @user.following.count %>
+            </div>
+            <div class="relation__user">フォロー</div>
+          </div>
+        <% end %>
+        <%= link_to followers_user_path(@user.id), class: "relationship-link", method: :get do %>
+          <div class="relation">
+            <div class="relation__count">
+              <%= @user.follower.count %>
+            </div>
+            <div class="relation__user">フォロワー</div>
+          </div>
+        <% end %>
+      </div>
+      <div class="user-profile">
+        <h2 class="user-profile__title">プロフィール</h2>
+        <div class="user-profile__name"><%= @user.profile %></div>
+      </div>
     </div>
   </div>
 </div>
