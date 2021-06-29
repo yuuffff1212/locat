@@ -1,0 +1,20 @@
+<%= render "shared/header" %>
+
+<div class="top-container">
+  <div class="user-wrapper">
+    <div class="user-wrapper__title">フォロー中</div>
+    <div class="table">
+      <% @user.following.each do |user| %>
+        <div class="user-card">
+          <%= link_to user_path(user.id), class: "user-card__link", method: :get do %>
+            <div class="user-card__top">
+              <div class="user_card_img"><%= image_tag user.avatar, class: "user-img" %></div>
+              <div class="user-card__name"><%= user.name %></div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
