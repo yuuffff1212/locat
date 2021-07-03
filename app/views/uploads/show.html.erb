@@ -95,6 +95,20 @@
         <div class="text-detail"><%= @upload.cafe_smoking.name %></div>
       </div>
     </div>
+    <div class="comment__detail">
+      <div class="comment__page">
+        <h3 class="comment__title">コメント</h3>
+      </div>
+      <div id="comment_area">
+        <%= render partial: 'comments/index', locals: {comments: @comments} %>
+      </div>
+      <% if user_signed_in? %>
+      <div class="comment__page">
+        <h3 class="comment__form">コメントを投稿する</h3>
+        <%= render partial: 'comments/form', locals: {comment: @comment, upload: @upload} %>
+      </div>
+      <% end %>
+    </div>
   </div>
 </main>
 

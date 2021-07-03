@@ -1,0 +1,4 @@
+<%= form_with(model: [upload, comment], url: upload_comments_path(@upload), local: false) do |f| %>
+  <%= f.text_area :content, class: "comment-input", placeholder: "コメントを入力する..." %>
+  <%= f.submit "送信", class: "comment-submit" %>
+<% end %>
