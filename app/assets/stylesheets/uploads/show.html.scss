@@ -61,6 +61,8 @@
   padding-bottom: 5px;
   border-bottom: 3px solid black;
   margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
 
   &__title {
     font-weight: bold;
@@ -68,10 +70,17 @@
   }
 }
 
+.upload-manage {
+  & a {
+    text-decoration: none;
+  }
+}
+
 .contents-info {
   display: flex;
   border-bottom: 3px solid black;
 }
+
 .contents-features {
   padding: 20px 20px;
 

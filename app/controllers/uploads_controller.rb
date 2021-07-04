@@ -25,6 +25,8 @@ class UploadsController < ApplicationController
 
   def show
     @tag = @upload.tags
+    @comment = Comment.new
+    @comments = @upload.comments.order(created_at: :desc)
   end
 
   def edit

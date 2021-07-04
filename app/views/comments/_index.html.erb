@@ -1,0 +1,21 @@
+<%= comments.count %>件のコメント
+<% comments.each do |comment| %>
+  <div class="comment__container">
+    <div class="comment__box">
+      <div class="comment__avatar">
+        <%= link_to image_tag(comment.user.avatar, class: "avatar-img"), user_path(comment.user.id) %>
+      </div>
+      <div class="comment__text">
+        <p><%= link_to "#{comment.user.name}さん", user_path(comment.user.id) %></p>
+        <div class="comment__content">
+          <span>コメント: <%= comment.content %></span>
+          <% if comment.user == current_user %>
+            <%= link_to upload_comment_path(comment.upload_id, comment.id), method: :delete, remote: true do %>
+              <i class="fas fa-trash-alt" style="margin-left:10px" ></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

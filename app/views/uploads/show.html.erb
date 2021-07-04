@@ -2,7 +2,7 @@
 <main class="main">
   <div class="main-header">
     <p class="upload-user">
-      <%= link_to image_tag(@upload.user.avatar,  class: "avatar-img"), user_path(@upload.user.id) %>
+      <%= link_to image_tag(@upload.user.avatar, class: "avatar-img"), user_path(@upload.user.id) %>
       <%= link_to @upload.user.name, user_path(@upload.user.id), class: "upload-user__name" %>
     </p>
     <div class="tag-container">
@@ -15,12 +15,6 @@
     <div class="contents-row">
       <div class="contents-post">
         <div class="contents-img" style="background-image: url(<%=url_for(@upload.image) %>)">
-          <% if user_signed_in? && current_user.id == @upload.user_id %>
-            <div class="upload-manage">
-              <%= link_to "編集する", edit_upload_path(@upload.id), class: "upload-btn" %>
-              <%= link_to "削除する", upload_path(@upload.id), class: "upload-btn", method: :delete %>
-            </div>
-          <% end %>
           <div class="contents-name"><%= @upload.title %></div>
           <div class="contents-favorite">
             <div id="favorite">
@@ -36,6 +30,16 @@
       <h2 class="contents-detail__title">
         店舗情報
       </h2>
+      <% if user_signed_in? && current_user.id == @upload.user_id %>
+        <div class="upload-manage">
+          <%= link_to  edit_upload_path(@upload.id), class: "upload-btn" do %>
+            <i class="fas fa-edit" style="color: revert; font-size: 1.5em; margin: 0 10px; "></i>
+          <% end %>
+          <%= link_to upload_path(@upload.id), class: "upload-btn", method: :delete do %>
+            <i class="fas fa-trash-alt" style="color:darkblue; font-size: 1.5em; margin: 0 10px;"></i>
+          <% end %>
+        </div>
+      <% end %>
     </div>
     <div id="contents-container">
       <div class="contents-info">
@@ -94,6 +98,20 @@
         </div>
         <div class="text-detail"><%= @upload.cafe_smoking.name %></div>
       </div>
+    </div>
+    <div class="comment__detail">
+      <div class="comment__page">
+        <h3 class="comment__title">コメント</h3>
+      </div>
+      <div id="comment_area">
+        <%= render partial: 'comments/index', locals: { comments: @comments } %>
+      </div>
+      <% if user_signed_in? %>
+        <div class="comment__page">
+          <h3 class="comment__form">コメントを投稿する</h3>
+          <%= render partial: 'comments/form', locals: { comment: @comment, upload: @upload } %>
+        </div>
+      <% end %>
     </div>
   </div>
 </main>
