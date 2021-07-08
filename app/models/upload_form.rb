@@ -4,16 +4,14 @@ class UploadForm
                 :user_id, :image, :name
 
   with_options presence: true do
-    validates :title
-    validates :text
+    validates :title, length: { maximum: 40 }
+    validates :text, length: { maximum: 1000 }
     validates :cafe_wifi_id
     validates :cafe_charging_id
     validates :cafe_smoking_id
     validates :user_id
     validates :image
     validates :name
-    # validates :upload_id
-    # validates :tag_id
   end
 
   with_options numericality: { other_than: 0 } do
@@ -35,9 +33,7 @@ class UploadForm
     ActiveRecord::Base.transaction do
       @upload.update(title: title, text: text, url: url, working_day: working_day, day_off: day_off, cafe_wifi_id: cafe_wifi_id, cafe_charging_id: cafe_charging_id, cafe_smoking_id: cafe_smoking_id, user_id: user_id, image: image)
 
-      @upload.upload_tag_relations.each do |tag|
-        tag.delete
-      end
+      @upload.upload_tag_relations.each(&:delete)
 
       tag_list.each do |tag_name|
         tag = Tag.where(name: tag_name).first_or_initialize
