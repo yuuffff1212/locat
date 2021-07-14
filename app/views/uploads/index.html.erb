@@ -1,5 +1,9 @@
 <%= render "shared/header" %>
+<<<<<<< Updated upstream
 <%= javascript_pack_tag 'index' %>
+=======
+<%#= javascript_pack_tag 'index' %>
+>>>>>>> Stashed changes
 
 <div id="global-container">
   <div id="main-container">
@@ -127,6 +131,13 @@
                   <% end %>
                 </div>
               </div>
+<<<<<<< Updated upstream
+=======
+              <div class="favorite">
+                <% if user_signed_in? %>
+                  <favorite-button :user-id="<%= current_user.id %>" :upload-id="<%= upload.id %>"></favorite-button>
+                <% end %>
+>>>>>>> Stashed changes
               </div>
             </div>
           <% end %>
@@ -139,4 +150,16 @@
       <%= image_tag 'post.png', size: '70x70', class: "uploads-btn-icon" %>
     <% end %>
   <% end %>
+<<<<<<< Updated upstream
 </div>
+=======
+</div>
+
+
+<script>
+    import FavoriteButton from "../../javascript/components/Favorite/FavoriteButton";
+    export default {
+        components: {FavoriteButton}
+    }
+</script>
+>>>>>>> Stashed changes
