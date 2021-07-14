@@ -2,7 +2,7 @@ import 'babel-polyfill'
 import Vue from 'vue'
 
 // 作成したコンポーネントファイルをimportします
-import RelationshipButton from '../compenents/Relationship/RelationshipButton.vue'
+import RelationshipButton from '../components/Relationship/RelationshipButton.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
     new Vue({
