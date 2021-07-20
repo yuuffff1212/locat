@@ -66,6 +66,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'active_hash'
+gem 'aws-sdk-s3', require: false
 gem 'bootstrap', '~> 5.0.0.beta3'
 gem 'devise'
 gem 'devise-i18n'
