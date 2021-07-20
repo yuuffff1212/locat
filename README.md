@@ -32,7 +32,7 @@
    
 * インフラ環境
    * Docker / Docker-compose
-   * AWS 
+   * AWS (VPC/EC2/RDS/S3/ALB/ACM/Route53)
    * CircleCI (CI/CD)
    * MySQL2 0.5.3 /Puma/Nginx
    * Terraform
@@ -52,15 +52,20 @@
   * 新規投稿機能
     * active_storageを使用した画像投稿機能
     * ActiveHash、FormObjectを使用した投稿機能
-    * タグ付け投稿機能
+    * 投稿の編集、削除機能
+    * 投稿に対するコメント機能 (ajax通信による非同期処理)
+    * タグ付け投稿機能 (配列化して表示させる機能)
   * 投稿に対する「いいね」機能 (非同期通信/Vue.js axios)
+    * いいねした投稿の一覧表示機能
+  * ユーザーフォロー機能(非同期処理/Vue.js axios)
+    * フォローの一覧表示機能
+    * フォロワーの一覧表示機能
 
 * その他
   * メニューバーのハンバーガーメニュー(JQuery)
 
 ## 現在実装している機能
 
-* ユーザーフォロー機能(非同期処理/Vue.js axios)
 * タグから投稿を検索できる
 * いいね数に応じたランキング形式の投稿一覧表示機能
 * GoogleMapApiによる地図の表示
