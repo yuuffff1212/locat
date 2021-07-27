@@ -32,10 +32,11 @@
    
 * インフラ環境
    * Docker / Docker-compose
-   * AWS (VPC/EC2/RDS/S3/ALB/ACM/Route53)
+   * AWS (VPC/ECS Fargate/EC2/RDS/S3/ALB/ACM/Route53)
    * CircleCI (CI/CD)
-   * MySQL2 0.5.3 /Puma/Nginx
-   * Terraform
+   * MySQL5.7 
+   * Puma
+   * Nginx
 
 ## ER図
 
@@ -69,6 +70,4 @@
 * タグから投稿を検索できる
 * いいね数に応じたランキング形式の投稿一覧表示機能
 * GoogleMapApiによる地図の表示
-* 開発環境にDocker/Docker-composeの導入
 * CircleCi(CI/CD)による自動デプロイ
-* Terraformによるインフラ環境のコード化
