@@ -7,15 +7,15 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:3.0.1-node-browsers
-        environment:
-          - BUNDLER_VERSION: 2.2.24
-          - RAILS_ENV: 'test'
+    - image: circleci/ruby:3.0.1-node-browsers
+      environment:
+        - BUNDLER_VERSION: 2.2.24
+        - RAILS_ENV: 'test'
 
-      - image: circleci/mysql:5.7
-        environment:
-          - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
-          - MYSQL_ROOT_HOST: '127.0.0.1'
+    - image: circleci/mysql:5.7
+      environment:
+        - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+        - MYSQL_ROOT_HOST: '127.0.0.1'
 
     working_directory: ~/locat
 
@@ -58,7 +58,7 @@ jobs:
           command: bundle exec bin/webpack
 
       #Rubocop
-      -run:
+      - run:
          name: Rubocop
          command: bundle exec rubocop
 
