@@ -6,5 +6,5 @@ RUN apt-get update && \
     locale-gen ja_JP.UTF-8
 ENV LANG ja_JP.UTF-8
 ENV LC_TIME C
-COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./conf.d/default.conf /etc/nginx/conf.d/default.conf
+ADD ./nginx/nginx.conf /etc/nginx/nginx.conf
+ADD ./nginx/default.conf /etc/nginx/conf.d/default.conf

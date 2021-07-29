@@ -97,7 +97,7 @@ workflows:
           # ECRにリポジトリがなかったら創るか？
           create-repo: true
           # Dockerfleのパス(デフォルトはカレントディレクトリのパス)
-          dockerfile: ./containers/nginx/Dockerfile
+          dockerfile: ./nginx/Dockerfile
           # ECRのリポジトリ
           repo: nginx-locat-app
           tag: "${CIRCLE_SHA1}"
