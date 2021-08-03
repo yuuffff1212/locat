@@ -76,7 +76,7 @@
 
 ## インフラ構成図
 
-
+<img src = "https://github.com/yuuffff1212/locat/blob/master/Untitled.png">
 
 ## 完了済みの実装一覧
 
