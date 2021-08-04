@@ -112,7 +112,7 @@ workflows:
           # ECSのクラスター名かARNのフルパス
           cluster-name: 'locat-cluster'
           # サービス名
-          service-name: 'locat-alb-service'
+          service-name: 'locat-service'
           # containerはタスク定義で設定したコンテナ名にする
           container-image-name-updates: "container=nginx,tag=${CIRCLE_SHA1}"
 
@@ -141,6 +141,6 @@ workflows:
           # ECSのクラスター名かARNのフルパス
           cluster-name: 'locat-cluster'
           # サービス名
-          service-name: 'locat-alb-service'
+          service-name: 'locat-service'
           # containerはタスク定義で設定したコンテナ名にする
           container-image-name-updates: "container=rails,tag=${CIRCLE_SHA1}"
