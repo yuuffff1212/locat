@@ -31,7 +31,7 @@ RUN mkdir -p tmp/pids
 VOLUME /locat-app/public
 VOLUME /locat-app/tmp
 
-RUN yarn install --check-files
-RUN SECRET_KEY_BASE=placeholder bundle exec rails assets:precompile
+#RUN yarn install --check-files
+#RUN SECRET_KEY_BASE=placeholder bundle exec rails assets:precompile
 
 CMD bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
