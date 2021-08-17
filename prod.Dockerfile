@@ -19,8 +19,6 @@ ADD . /locat-app
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
-EXPOSE 3000
-
 # Nginxと通信を行うための準備
 RUN mkdir -p tmp/sockets
 RUN mkdir -p tmp/pids
@@ -30,4 +28,4 @@ VOLUME /locat-app/tmp
 #RUN yarn install --check-files
 #RUN SECRET_KEY_BASE=placeholder bundle exec rails assets:precompile
 
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD bash -c "rm -f tmp/pids/server.pid && bundle exec pumactl start"
