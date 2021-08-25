@@ -79,3 +79,4 @@ gem 'image_processing', '~> 1.2'
 gem 'jquery-rails'
 gem 'mini_magick'
 gem 'pry-rails'
+

@@ -10,4 +10,8 @@ class Upload < ApplicationRecord
   belongs_to :cafe_smoking
   belongs_to :cafe_charging
   belongs_to :cafe_wifi
+
+  def self.create_ranks
+    Upload.find(Favorite.group(:upload_id).order('count(upload_id) DESC').limit(4).pluck(:upload_id))
+  end
 end
