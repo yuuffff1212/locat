@@ -2,80 +2,8 @@
 <%= javascript_pack_tag 'index' %>
 
 <div id="global-container">
-  <div id="main-container">
-    <div id="top-container">
-      <div class="top-wrapper">
-        <div class="top-slide">
-          <div class="top-image">
-            <img src="assets/image-1.jpg" alt="">
-          </div>
-          <div class="projects-detail">
-            <div class="icon-name">
-              <a class="icon-name__style" href="#">icon-name</a>
-              <div class="icon-name__tag">東京</div>
-            </div>
-          </div>
-          <p class="user-name">
-            <a class="user-name__image" href="#">
-              <img src="assets/image-4.jpg" width="40" height="40" alt="">
-            </a>
-            <a class="user-name__detail" href="#">user</a>
-          </p>
-        </div>
-        <div class="top-slide">
-          <div class="top-image">
-            <img src="assets/image-2.jpg" alt="">
-          </div>
-          <div class="projects-detail">
-            <div class="icon-name">
-              <a class="icon-name__style" href="#">icon-name</a>
-              <div class="icon-name__tag">東京</div>
-            </div>
-          </div>
-          <p class="user-name">
-            <a class="user-name__image" href="#">
-              <img src="assets/image-4.jpg" width="40" height="40" alt="">
-            </a>
-            <a class="user-name__detail" href="#">user</a>
-          </p>
-        </div>
-        <div class="top-slide">
-          <div class="top-image">
-            <img src="assets/image-4.jpg">
-          </div>
-          <div class="projects-detail">
-            <div class="icon-name">
-              <a class="icon-name__style" href="#">icon-name</a>
-              <div class="icon-name__tag">東京</div>
-            </div>
-          </div>
-          <p class="user-name">
-            <a class="user-name__image" href="#">
-              <img src="assets/image-4.jpg" width="40" height="40" alt="">
-            </a>
-            <a class="user-name__detail" href="#">user</a>
-          </p>
-        </div>
-        <div class="top-slide">
-          <div class="top-image">
-            <img src="assets/image-5.jpg">
-          </div>
-          <div class="projects-detail">
-            <div class="icon-name">
-              <a class="icon-name__style" href="#">icon-name</a>
-              <div class="icon-name__tag">東京</div>
-            </div>
-          </div>
-          <p class="user-name">
-            <a class="user-name__image" href="#">
-              <img src="assets/image-4.jpg" width="40" height="40" alt="">
-            </a>
-            <a class="user-name__detail" href="#">user</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render "uploads/ranking_upload" %>
+
   <div id class="main-page">
     <div class="search-content">
       <form method="get" action="#" class="search_container">

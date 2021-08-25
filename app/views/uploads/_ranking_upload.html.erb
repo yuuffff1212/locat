@@ -1,0 +1,35 @@
+<div id="main-container">
+  <div id="top-container">
+    <div class="top-wrapper">
+      <% @ranks.each do |upload| %>
+        <div class="top-slide">
+          <div class="top-image">
+            <%= link_to image_tag(upload.image, class: "upload-img"), upload_path(upload.id) %>
+          </div>
+          <div class="projects-details">
+            <div class="icon-name">
+              <div><%= link_to "#{upload.title}", upload_path(upload.id), class: "icon-name__style" %></div>
+              <div class="tag-container">
+                <% upload.tags.each do |tag| %>
+                  <div class="upload-tags">
+                    #<%= tag.name %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="user-footer">
+              <div class="ranking-user">
+                <%= link_to image_tag(upload.user.avatar, class: "avatar-img"), user_path(upload.user.id) %>
+                <%= link_to upload.user.name, user_path(upload.user.id), class: "upload-user__name" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
