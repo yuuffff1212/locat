@@ -1,6 +1,6 @@
 # 個人制作アプリ　[locate](http://www.locat-app.com)
 
-<img src = "https://github.com/yuuffff1212/locat/blob/master/locate.png" width = "800px">
+<img src = "https://github.com/yuuffff1212/locat/blob/master/locat.png" width = "800px">
 
 ## 概要
 
