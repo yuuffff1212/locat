@@ -17,7 +17,8 @@ RUN bundle install
 ADD . /locat-app
 
 COPY entrypoint.sh /usr/bin/
-RUN chmod +x /usr/bin/entrypoint.sh
+#RUN chmod +x /usr/bin/entrypoint.sh
+RUN chmod 755 /locat-app/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 # Nginxと通信を行うための準備
 RUN mkdir -p tmp/sockets
