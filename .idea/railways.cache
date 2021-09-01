@@ -17,6 +17,9 @@
                                     root GET    /                                                                                                 uploads#index
                         upload_favorites DELETE /uploads/:upload_id/favorites(.:format)                                                           favorites#destroy
                                          POST   /uploads/:upload_id/favorites(.:format)                                                           favorites#create
+                         upload_comments POST   /uploads/:upload_id/comments(.:format)                                                            comments#create
+                          upload_comment DELETE /uploads/:upload_id/comments/:id(.:format)                                                        comments#destroy
+                          search_uploads GET    /uploads/search(.:format)                                                                         uploads#search
                                  uploads GET    /uploads(.:format)                                                                                uploads#index
                                          POST   /uploads(.:format)                                                                                uploads#create
                               new_upload GET    /uploads/new(.:format)                                                                            uploads#new

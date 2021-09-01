@@ -148,9 +148,8 @@ $black: black;
 //検索フォーム
 
 .search-content {
-  padding: 48px 40px;
-  align-items: center;
   display: flex;
+  margin: 20px 0 10px;
 }
 
 .search_container {
@@ -161,15 +160,15 @@ $black: black;
   padding: 3px 10px;
   border-radius: 20px;
   height: 2.2em;
-  width: 400px;
+  width: 218px;
   overflow: hidden;
-  background: #3879D9;
+  background: dimgray;;
 }
 
 .search_container input[type="text"] {
   border: none;
   height: 2.0em;
-  background: #3879D9;
+  background: dimgray;;
 }
 
 .search_container input[type="text"]:focus {
@@ -198,11 +197,12 @@ $black: black;
 
 .title-content {
   display: flex;
+  justify-content: center;
+  margin: 60px 0 30px;
 }
 
 .main-title {
   display: block;
-  margin: 0 auto;
 }
 
 .main-content {
@@ -213,7 +213,7 @@ $black: black;
 
   &__category {
     padding-right: 30px;
-    background-color: beige;
+    //background-color: beige;
     width: calc(900px - 650px);
   }
 }
@@ -221,7 +221,7 @@ $black: black;
 .content-page {
   width: calc(900px - 250px);
   padding: 20px 20px;
-  background-color: bisque;
+  //background-color: bisque;
   height: 500px;
 }
 

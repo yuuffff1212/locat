@@ -1,0 +1,20 @@
+<%= render "shared/header" %>
+
+<div class="search-content">
+  <%= form_with(url: search_uploads_path, local: true, method: 'get', class: "search_container") do |form| %>
+    <%= form.text_field :keyword, placeholder: "カフェを検索", class: "search_input" %>
+    <%= form.submit "検索", class: "fas fa-search", style: "color: white" %>
+  <% end %>
+</div>
+
+<% if @uploads == [] %>
+  <p>検索結果はありません</p>
+<% end %>
+
+<% @uploads.each do |upload| %>
+  <%= upload.title %>
+  <%= image_tag upload.image %>
+  <%= upload.text %>
+  <%= link_to image_tag(upload.user.avatar, class: "avatar-img"), user_path(upload.user.id) %>
+  <%= link_to upload.user.name, user_path(upload.user.id), class: "upload-user__name" %>
+<% end %>
