@@ -26,7 +26,7 @@ RUN mkdir -p tmp/pids
 VOLUME /locat-app/public
 VOLUME /locat-app/tmp
 
-#RUN SECRET_KEY_BASE=placeholder bundle exec rails assets:precompile RAILS_ENV=production
+RUN SECRET_KEY_BASE=placeholder bundle exec rake webpacker:compile RAILS_ENV=production
 
 #RUN yarn install --check-files
 
