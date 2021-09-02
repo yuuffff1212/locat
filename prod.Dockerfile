@@ -27,6 +27,5 @@ VOLUME /locat-app/public
 VOLUME /locat-app/tmp
 
 #RUN yarn install --check-files
-RUN bundle exec rails assets:precompile RAILS_ENV=production
 
 CMD bash -c "rm -f tmp/pids/server.pid && bundle exec pumactl start"
