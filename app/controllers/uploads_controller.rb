@@ -7,8 +7,8 @@ class UploadsController < ApplicationController
     @uploads = Upload.all.order(created_at: :desc)
     @tag_list = Tag.all
     @ranks = Upload.create_ranks
-    @q = Upload.ransack(params[:q])
-    @uploads = @q.result(distinct: true)
+    # @q = Upload.ransack(params[:q])
+    # @uploads = @q.result(distinct: true)
   end
 
   def new
@@ -62,12 +62,12 @@ class UploadsController < ApplicationController
 
   def search
     @uploads = Upload.search(params[:keyword])
-    @q = Upload.search(search_params)
-    @uploads = @q.result(distinct: true)
+    # @category = Upload.search(search_params)
+    # @uploads = @q.result(distinct: true)
   end
 
   def category
-    @results = @q.result
+    @uploads = @q.result
   end
 
   private
@@ -85,7 +85,7 @@ class UploadsController < ApplicationController
     @q = Upload.ransack(params[:q])
   end
 
-  def search_params
-    params.require(:q).permit!
-  end
+  # def search_params
+  #   params.require(:q).permit(:keyword)
+  # end
 end

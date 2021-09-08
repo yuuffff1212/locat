@@ -146,10 +146,46 @@ $black: black;
 }
 
 //検索フォーム
-
 .search-content {
   display: flex;
   margin: 20px 0 10px;
+}
+
+.search-category {
+  padding:10px;
+  margin-top:10px;
+
+  &__main {
+    font-weight: bold;
+    color: gray;
+    font-size: 18px;
+    border-bottom: 2px solid darkgray;
+    text-align: center;
+  }
+
+  &__form {
+    margin-left: 1.5em;
+  }
+
+  &__list {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+
+  &__select {
+    margin-bottom: 0.5em;
+    font-size: 17px;
+    color: darkgray;
+    border-radius: 5px;
+    border: 2px solid lightslategrey;
+  }
+
+  &__submit {
+    border: 2px solid black;
+    border-radius: 8px;
+    background: white;
+    color: black;
+  }
 }
 
 .search_container {
@@ -191,6 +227,26 @@ $black: black;
 
 .search_container ::-webkit-input-placeholder {
   color: #fff;
+}
+
+//カテゴリー検索
+
+.category-list {
+  list-style: none;
+
+  &__content {
+    font-weight: bold;
+    color: grey;
+    font-size: 18px;
+    border-bottom: 2px solid gainsboro;
+    width: 65% ;
+  }
+  &__item {
+    margin-bottom: 0.5em;
+    font-size: 15px;
+    font-weight: bold;
+    float: left;
+  }
 }
 
 //メイン投稿一覧
