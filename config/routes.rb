@@ -2,11 +2,16 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  root to: "uploads#index"
+  root to: 'uploads#index'
+  get 'uploads/category', to: 'uploads#category'
   resources :uploads do
     resource :favorites, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
+    collection do
+      get 'search'
+    end
   end
+
 
   resources :users, only: [:show, :edit, :update] do
     member do

@@ -4,6 +4,14 @@
 $white: white;
 $black: black;
 
+#global-container {
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 120px; /*←footerの高さ*/
+  box-sizing: border-box; /*←全て含めてmin-height:100vhに*/
+}
+
 //スライドページ
 
 *:focus {
@@ -146,11 +154,46 @@ $black: black;
 }
 
 //検索フォーム
-
 .search-content {
-  padding: 48px 40px;
-  align-items: center;
   display: flex;
+  margin: 20px 0 10px;
+}
+
+.search-category {
+  padding: 10px;
+  margin-top: 10px;
+
+  &__main {
+    font-weight: bold;
+    color: gray;
+    font-size: 18px;
+    border-bottom: 2px solid darkgray;
+    text-align: center;
+  }
+
+  &__form {
+    margin-left: 1.5em;
+  }
+
+  &__list {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+
+  &__select {
+    margin-bottom: 0.5em;
+    font-size: 17px;
+    color: darkgray;
+    border-radius: 5px;
+    border: 2px solid lightslategrey;
+  }
+
+  &__submit {
+    border: 2px solid black;
+    border-radius: 8px;
+    background: white;
+    color: black;
+  }
 }
 
 .search_container {
@@ -161,15 +204,15 @@ $black: black;
   padding: 3px 10px;
   border-radius: 20px;
   height: 2.2em;
-  width: 400px;
+  width: 218px;
   overflow: hidden;
-  background: #3879D9;
+  background: dimgray;;
 }
 
 .search_container input[type="text"] {
   border: none;
   height: 2.0em;
-  background: #3879D9;
+  background: dimgray;;
 }
 
 .search_container input[type="text"]:focus {
@@ -194,15 +237,50 @@ $black: black;
   color: #fff;
 }
 
+//カテゴリー検索
+
+.category-list {
+  list-style: none;
+
+  &__content {
+    font-weight: bold;
+    color: grey;
+    font-size: 18px;
+    border-bottom: 2px solid gainsboro;
+    width: 65%;
+  }
+
+  &__item {
+    margin-bottom: 0.5em;
+    font-size: 15px;
+    font-weight: bold;
+    float: left;
+  }
+}
+
 //メイン投稿一覧
+
+.footer {
+  background-color: #2E2F30;
+  position: absolute; /*←絶対位置*/
+  bottom: 0; /*下に固定*/
+  color: white;
+  font-size: 1.2em;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
 
 .title-content {
   display: flex;
+  justify-content: center;
+  margin: 60px 0 30px;
 }
 
 .main-title {
   display: block;
-  margin: 0 auto;
+  font-weight: bold;
+  border-bottom: 2px solid darkgray;
 }
 
 .main-content {
@@ -213,7 +291,7 @@ $black: black;
 
   &__category {
     padding-right: 30px;
-    background-color: beige;
+    //background-color: beige;
     width: calc(900px - 650px);
   }
 }
@@ -221,7 +299,7 @@ $black: black;
 .content-page {
   width: calc(900px - 250px);
   padding: 20px 20px;
-  background-color: bisque;
+  //background-color: bisque;
   height: 500px;
 }
 
@@ -257,6 +335,12 @@ $black: black;
   font-size: 25px;
   font-weight: bold;
   margin-left: 20px;
+  transition: 0.5s;
+  color: black;
+
+  &:hover {
+    color: cadetblue;
+  }
 }
 
 .tag-container {
@@ -298,6 +382,11 @@ $black: black;
     font-weight: bold;
     margin-left: 5px;
     color: black;
+    transition: 0.5s;
+
+    &:hover {
+      color: cadetblue;
+    }
   }
 }
 
@@ -311,7 +400,9 @@ $black: black;
   width: 40px;
   height: 40px;
   border-radius: 50%;
+
 }
+
 //投稿ボタン
 
 .uploads-btn {

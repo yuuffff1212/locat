@@ -1,0 +1,19 @@
+<%= render "shared/header" %>
+
+<% if @uploads == [] %>
+  <p class="search-title">検索結果はありません</p>
+<% end %>
+<div class="category-container">
+  <div class="category-container__right">
+    <%= render "shared/search-form" %>
+    <%= render "shared/category-form" %>
+  </div>
+  <div class="category-container__left">
+    <%= render "shared/search-card" %>
+  </div>
+</div>
+<%= render "shared/footer" %>
+
+
+
+

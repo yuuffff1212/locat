@@ -1,120 +1,123 @@
 <%= render "shared/header" %>
-<main class="main">
-  <div class="main-header">
-    <p class="upload-user">
-      <%= link_to image_tag(@upload.user.avatar, class: "avatar-img"), user_path(@upload.user.id) %>
-      <%= link_to @upload.user.name, user_path(@upload.user.id), class: "upload-user__name" %>
-    </p>
-    <div class="tag-container">
-      <% @tag.each do |tag| %>
-        <div class="main-tags">#<%= tag.name %></div>
-      <% end %>
+<div id="global-container">
+  <main class="main">
+    <div class="main-header">
+      <p class="upload-user">
+        <%= link_to image_tag(@upload.user.avatar, class: "avatar-img"), user_path(@upload.user.id) %>
+        <%= link_to @upload.user.name, user_path(@upload.user.id), class: "upload-user__name" %>
+      </p>
+      <div class="tag-container">
+        <% @tag.each do |tag| %>
+          <div class="main-tags"><%= tag.name %></div>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div class="contents-main">
-    <div class="contents-row">
-      <div class="contents-post">
-        <div class="contents-img" style="background-image: url(<%=url_for(@upload.image) %>)">
-          <div class="contents-name"><%= @upload.title %></div>
-          <div class="contents-favorite">
-            <div id="favorite">
-              <% if user_signed_in? %>
-                <favorite-button :user-id="<%= current_user.id %>" :upload-id="<%= @upload.id %>"></favorite-button>
-              <% end %>
+    <div class="contents-main">
+      <div class="contents-row">
+        <div class="contents-post">
+          <div class="contents-img" style="background-image: url(<%=url_for(@upload.image) %>)">
+            <div class="contents-name"><%= @upload.title %></div>
+            <div class="contents-favorite">
+              <div id="favorite">
+                <% if user_signed_in? %>
+                  <favorite-button :user-id="<%= current_user.id %>" :upload-id="<%= @upload.id %>"></favorite-button>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="contents-detail">
-      <h2 class="contents-detail__title">
-        店舗情報
-      </h2>
-      <% if user_signed_in? && current_user.id == @upload.user_id %>
-        <div class="upload-manage">
-          <%= link_to  edit_upload_path(@upload.id), class: "upload-btn" do %>
-            <i class="fas fa-edit" style="color: revert; font-size: 1.5em; margin: 0 10px; "></i>
-          <% end %>
-          <%= link_to upload_path(@upload.id), class: "upload-btn", method: :delete do %>
-            <i class="fas fa-trash-alt" style="color:darkblue; font-size: 1.5em; margin: 0 10px;"></i>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-    <div id="contents-container">
-      <div class="contents-info">
-        <div class="contents-features">
-          <div class="contents-features__detail">
-            特徴
+      <div class="contents-detail">
+        <h2 class="contents-detail__title">
+          店舗情報
+        </h2>
+        <% if user_signed_in? && current_user.id == @upload.user_id %>
+          <div class="upload-manage">
+            <%= link_to edit_upload_path(@upload.id), class: "upload-btn" do %>
+              <i class="fas fa-edit" style="color: revert; font-size: 1.5em; margin: 0 10px; "></i>
+            <% end %>
+            <%= link_to upload_path(@upload.id), class: "upload-btn", method: :delete do %>
+              <i class="fas fa-trash-alt" style="color:darkblue; font-size: 1.5em; margin: 0 10px;"></i>
+            <% end %>
           </div>
-        </div>
-        <div class="text-detail"><%= @upload.text %></div>
+        <% end %>
       </div>
-      <div class="contents-info">
-        <div class="contents-features">
-          <div class="contents-features__detail">
-            URL
+      <div id="contents-container">
+        <div class="contents-info">
+          <div class="contents-features">
+            <div class="contents-features__detail">
+              特徴
+            </div>
           </div>
+          <div class="text-detail"><%= @upload.text %></div>
         </div>
-        <div class="text-detail"><%= @upload.url %></div>
-      </div>
-      <div class="contents-info">
-        <div class="contents-features">
-          <div class="contents-features__detail">
-            営業時間
+        <div class="contents-info">
+          <div class="contents-features">
+            <div class="contents-features__detail">
+              URL
+            </div>
           </div>
+          <div class="text-detail"><%= @upload.url %></div>
         </div>
-        <div class="text-detail"><%= @upload.working_day %></div>
-      </div>
-      <div class="contents-info">
-        <div class="contents-features">
-          <div class="contents-features__detail">
-            定休日
+        <div class="contents-info">
+          <div class="contents-features">
+            <div class="contents-features__detail">
+              営業時間
+            </div>
           </div>
+          <div class="text-detail"><%= @upload.working_day %></div>
         </div>
-        <div class="text-detail"><%= @upload.day_off %></div>
-      </div>
-      <div class="contents-info">
-        <div class="contents-features">
-          <div class="contents-features__detail">
-            Wifi設備
+        <div class="contents-info">
+          <div class="contents-features">
+            <div class="contents-features__detail">
+              定休日
+            </div>
           </div>
+          <div class="text-detail"><%= @upload.day_off %></div>
         </div>
-        <div class="text-detail"><%= @upload.cafe_wifi.name %></div>
-      </div>
-      <div class="contents-info">
-        <div class="contents-features">
-          <div class="contents-features__detail">
-            充電スペース
+        <div class="contents-info">
+          <div class="contents-features">
+            <div class="contents-features__detail">
+              Wifi設備
+            </div>
           </div>
+          <div class="text-detail"><%= @upload.cafe_wifi.name %></div>
         </div>
-        <div class="text-detail"><%= @upload.cafe_charging.name %></div>
-      </div>
-      <div class="contents-info">
-        <div class="contents-features">
-          <div class="contents-features__detail">
-            喫煙スペース
+        <div class="contents-info">
+          <div class="contents-features">
+            <div class="contents-features__detail">
+              充電スペース
+            </div>
           </div>
+          <div class="text-detail"><%= @upload.cafe_charging.name %></div>
         </div>
-        <div class="text-detail"><%= @upload.cafe_smoking.name %></div>
+        <div class="contents-info">
+          <div class="contents-features">
+            <div class="contents-features__detail">
+              喫煙スペース
+            </div>
+          </div>
+          <div class="text-detail"><%= @upload.cafe_smoking.name %></div>
+        </div>
       </div>
-    </div>
-    <div class="comment__detail">
-      <div class="comment__page">
-        <h3 class="comment__title">コメント</h3>
-      </div>
-      <div id="comment_area">
-        <%= render partial: 'comments/index', locals: { comments: @comments } %>
-      </div>
-      <% if user_signed_in? %>
+      <div class="comment__detail">
         <div class="comment__page">
-          <h3 class="comment__form">コメントを投稿する</h3>
-          <%= render partial: 'comments/form', locals: { comment: @comment, upload: @upload } %>
+          <h3 class="comment__title">コメント</h3>
         </div>
-      <% end %>
+        <div id="comment_area">
+          <%= render partial: 'comments/index', locals: { comments: @comments } %>
+        </div>
+        <% if user_signed_in? %>
+          <div class="comment__page">
+            <h3 class="comment__form">コメントを投稿する</h3>
+            <%= render partial: 'comments/form', locals: { comment: @comment, upload: @upload } %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
-</main>
+  </main>
+  <%= render "shared/footer" %>
+</div>
 
 <%= javascript_pack_tag 'index' %>
 　

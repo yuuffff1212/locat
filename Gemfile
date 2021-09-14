@@ -77,6 +77,8 @@ gem 'gmaps4rails'
 gem 'gon'
 gem 'image_processing', '~> 1.2'
 gem 'jquery-rails'
+gem 'kaminari', git: 'https://github.com/kaminari/kaminari'
 gem 'mini_magick'
 gem 'pry-rails'
+gem 'ransack'
 

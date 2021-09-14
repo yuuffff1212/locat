@@ -1,84 +1,89 @@
 <%= render "shared/header" %>
 
-<div class="upload-form-contents">
-  <div class="upload-form">
-    <h2 class="upload-form__title">カフェの情報を入力</h2>
-    <%= form_with(model: @upload_form, url: uploads_path, local: true)  do |f| %>
-      <%= render 'shared/error_messages', model: f.object %>
+<div id="global-container">
 
-      <%# カフェ画像 %>
-      <div class="img-upload">
-        <div class="upload-text">
-          カフェの画像
-          <span class="important">必須</span>
-        </div>
-        <div class="click-upload">
-          <p>
-            クリックしてファイルをアップロード
-          </p>
-          <%= f.file_field :image, id: "item-image" %>
-        </div>
-      </div>
-      <%# カフェ名とカフェの説明%>
-      <div class="cafe-item">
-        <div class="upload-text">
-          カフェ名
-          <span class="important">必須</span>
-        </div>
-        <%= f.text_area :title, class: "cafe-text", id: "uploads-name", placeholder: "カフェ名 (必須 40字まで)", maxlength: "40" %>
-        <div class="cafe-explain">
+
+  <div class="upload-form-contents">
+    <div class="upload-form">
+      <h2 class="upload-form__title">カフェの情報を入力</h2>
+      <%= form_with(model: @upload_form, url: uploads_path, local: true) do |f| %>
+        <%= render 'shared/error_messages', model: f.object %>
+
+        <%# カフェ画像 %>
+        <div class="img-upload">
           <div class="upload-text">
-            カフェの説明
+            カフェの画像
             <span class="important">必須</span>
           </div>
-          <%= f.text_area :text, class: "cafe-text", id: "cafe-info", placeholder: "カフェの説明 (必須 1000字まで)　こちらのカフェでは充電はもちろんのことwifiまで完備されているので,外で作業をする人におすすめです。", rows: "7", maxlength: "1000" %>
+          <div class="click-upload">
+            <p>
+              クリックしてファイルをアップロード
+            </p>
+            <%= f.file_field :image, id: "item-image" %>
+          </div>
         </div>
-        <div class="upload-tag">
+        <%# カフェ名とカフェの説明%>
+        <div class="cafe-item">
           <div class="upload-text">
-            タグ
+            カフェ名
             <span class="important">必須</span>
           </div>
-          <%= f.text_field :name, class: "uploads-field", id: "cafe-tag", placeholder: "タグを入力。複数の場合は,で区切る", maxlength: "20" %>
-        </div>
-        <div class="upload-text">
-          URL
-        </div>
-        <%= f.text_field :url, class: "uploads-field", id: "cafe-url", placeholder: "カフェのURL", maxlength: "60" %>
-        <div class="upload-text">
-          営業時間
-        </div>
-        <%= f.text_field :working_day, class: "uploads-field", id: "cafe-working_day", placeholder: "平日10:00~20:00 土日祝9:00~20:00", maxlength: "60" %>
-        <div class="upload-text">
-          定休日
-        </div>
-        <%= f.text_field :day_off, class: "uploads-field", id: "cafe-day-off", placeholder: "火曜日", maxlength: "60" %>
-      </div>
-      <%# カフェの詳細%>
-      <div class="upload-detail">
-        <div class="upload-text">カフェの詳細</div>
-        <div class="upload-form-detail">
-          <div class="upload-text">
-            店内のwifi
-            <span class="important">必須</span>
+          <%= f.text_area :title, class: "cafe-text", id: "uploads-name", placeholder: "カフェ名 (必須 40字まで)", maxlength: "40" %>
+          <div class="cafe-explain">
+            <div class="upload-text">
+              カフェの説明
+              <span class="important">必須</span>
+            </div>
+            <%= f.text_area :text, class: "cafe-text", id: "cafe-info", placeholder: "カフェの説明 (必須 1000字まで)　こちらのカフェでは充電はもちろんのことwifiまで完備されているので,外で作業をする人におすすめです。", rows: "7", maxlength: "1000" %>
           </div>
-          <%= f.collection_select(:cafe_wifi_id, CafeWifi.all, :id, :name, {}, { class: "select-box", id: "uploads-cafe-wifi" }) %>
-          <div class="upload-text">
-            充電コンセント
-            <span class="important">必須</span>
+          <div class="upload-tag">
+            <div class="upload-text">
+              タグ
+              <span class="important">必須</span>
+            </div>
+            <%= f.text_field :name, class: "uploads-field", id: "cafe-tag", placeholder: "タグを入力。複数の場合は,で区切る", maxlength: "20" %>
           </div>
-          <%= f.collection_select(:cafe_charging_id, CafeCharging.all, :id, :name, {}, { class: "select-box", id: "uploads-cafe-charging" }) %>
           <div class="upload-text">
-            喫煙について
-            <span class="important">必須</span>
+            URL
           </div>
-          <%= f.collection_select(:cafe_smoking_id, CafeSmoking.all, :id, :name, {}, { class: "select-box", id: "uploads-cafe-smoking" }) %>
+          <%= f.text_field :url, class: "uploads-field", id: "cafe-url", placeholder: "カフェのURL", maxlength: "60" %>
+          <div class="upload-text">
+            営業時間
+          </div>
+          <%= f.text_field :working_day, class: "uploads-field", id: "cafe-working_day", placeholder: "平日10:00~20:00 土日祝9:00~20:00", maxlength: "60" %>
+          <div class="upload-text">
+            定休日
+          </div>
+          <%= f.text_field :day_off, class: "uploads-field", id: "cafe-day-off", placeholder: "火曜日", maxlength: "60" %>
         </div>
-      </div>
-      <%# 投稿ボタン %>
-      <div class="upload-btn-contents">
-        <%= f.submit "投稿する", class: "uploads-form-btn" %>
-        <%= link_to 'トップページへ', root_path, class: "back-btn" %>
-      </div>
-    <% end %>
+        <%# カフェの詳細%>
+        <div class="upload-detail">
+          <div class="upload-text">カフェの詳細</div>
+          <div class="upload-form-detail">
+            <div class="upload-text">
+              店内のwifi
+              <span class="important">必須</span>
+            </div>
+            <%= f.collection_select(:cafe_wifi_id, CafeWifi.all, :id, :name, {}, { class: "select-box", id: "uploads-cafe-wifi" }) %>
+            <div class="upload-text">
+              充電コンセント
+              <span class="important">必須</span>
+            </div>
+            <%= f.collection_select(:cafe_charging_id, CafeCharging.all, :id, :name, {}, { class: "select-box", id: "uploads-cafe-charging" }) %>
+            <div class="upload-text">
+              喫煙について
+              <span class="important">必須</span>
+            </div>
+            <%= f.collection_select(:cafe_smoking_id, CafeSmoking.all, :id, :name, {}, { class: "select-box", id: "uploads-cafe-smoking" }) %>
+          </div>
+        </div>
+        <%# 投稿ボタン %>
+        <div class="upload-btn-contents">
+          <%= f.submit "投稿する", class: "uploads-form-btn" %>
+          <%= link_to 'トップページへ', root_path, class: "back-btn" %>
+        </div>
+      <% end %>
+    </div>
   </div>
+  <%= render "shared/footer" %>
 </div>

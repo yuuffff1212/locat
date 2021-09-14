@@ -1,0 +1,22 @@
+<div class="search-category">
+  <p class="search-category__main">店舗情報を絞り込む</p>
+  <%= search_form_for @q, class: "search-category__form", url: uploads_category_path do |f| %>
+    <div class="search-category__list">
+      店内のWiFi設備
+      <i class="fas fa-wifi" style="color: dodgerblue"></i>
+    </div>
+    <%= f.collection_select :cafe_wifi_id_eq, CafeWifi.where.not(id: 0), :id, :name, {include_blank: '選択して下さい'}, {class: "search-category__select"} %>
+    <div class="search-category__list">
+      店内の充電スペース
+      <i class="fas fa-charging-station" style="color: darkorange;"></i>
+    </div>
+    <%= f.collection_select :cafe_charging_id_eq, CafeCharging.where.not(id: 0), :id, :name, {include_blank: '選択して下さい'}, {class: "search-category__select"} %>
+    <div class="search-category__list">
+      店内の喫煙スペース
+      <i class="fas fa-smoking" style="color: brown;"></i>
+    </div>
+    <%= f.collection_select :cafe_smoking_id_eq, CafeSmoking.where.not(id: 0), :id, :name, {include_blank: '選択して下さい'}, {class: "search-category__select"} %>
+    <br>
+    <%= f.submit '検索', class: "search-category__submit" %>
+  <% end %>
+</div>
