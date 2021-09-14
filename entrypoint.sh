@@ -5,7 +5,7 @@ set -e
 rm -f /locat/tmp/pids/server.pid
 bundle exec rails db:create
 bundle exec rails db:migrate
-bundle exec rails webpacker:compile
+#bundle exec rails webpacker:compile
 bundle exec rails assets:precompile
 #bundle exec rails db:seed
 
