@@ -1,14 +1,13 @@
 class UploadsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show search]
   before_action :set_upload, only: %i[show edit update destroy]
-  before_action :search_category_upload, only: %i[index category]
+  before_action :search_category_upload, only: %i[index category search]
 
   def index
     @uploads = Upload.all.order(created_at: :desc)
+    @uploads = Upload.all.page(params[:page])
     @tag_list = Tag.all
     @ranks = Upload.create_ranks
-    # @q = Upload.ransack(params[:q])
-    # @uploads = @q.result(distinct: true)
   end
 
   def new
@@ -62,8 +61,6 @@ class UploadsController < ApplicationController
 
   def search
     @uploads = Upload.search(params[:keyword])
-    # @category = Upload.search(search_params)
-    # @uploads = @q.result(distinct: true)
   end
 
   def category
@@ -85,7 +82,4 @@ class UploadsController < ApplicationController
     @q = Upload.ransack(params[:q])
   end
 
-  # def search_params
-  #   params.require(:q).permit(:keyword)
-  # end
 end

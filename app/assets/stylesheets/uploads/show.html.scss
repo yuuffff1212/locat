@@ -1,5 +1,5 @@
 .main {
-  padding: 0 20vw;
+  padding: 0 25vw;
 }
 
 .main-header {
@@ -21,7 +21,6 @@
 }
 
 .contents-main {
-  //background: lavender;
   filter: drop-shadow(2px 4px 6px black);
 }
 
@@ -38,6 +37,7 @@
   height: 100%;
   width: 100%;
   background-position: center;
+  background-size: cover;
   position: relative;
 }
 

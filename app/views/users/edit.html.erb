@@ -9,18 +9,14 @@
     <div class="edit__right">
       <%= form_with model: current_user, local: true do |f| %>
         <%= render 'shared/error_messages', model: f.object %>
-
-
         <div class="edit__field">
           <%= f.label :name %><br/>
           <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
         </div>
-
         <div class="edit__field">
           <%= f.label :profile %><br/>
           <%= f.text_area :profile, autofocus: true, autocomplete: "profile", rows: "5", maxlength: "300" %>
         </div>
-
         <div class="edit__footer">
           <div class="edit__text">
             アイコン画像
@@ -32,14 +28,11 @@
             <%= f.file_field :avatar, id: "edit-image" %>
           </div>
         </div>
-
         <div class="edit__actions">
           <%= f.submit "Edit Profile" %>
         </div>
       <% end %>
-
       <%= link_to "Back", :back %>
-
     </div>
   </div>
 </div>

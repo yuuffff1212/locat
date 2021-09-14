@@ -4,6 +4,14 @@
 $white: white;
 $black: black;
 
+#global-container {
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 120px; /*←footerの高さ*/
+  box-sizing: border-box; /*←全て含めてmin-height:100vhに*/
+}
+
 //スライドページ
 
 *:focus {
@@ -152,8 +160,8 @@ $black: black;
 }
 
 .search-category {
-  padding:10px;
-  margin-top:10px;
+  padding: 10px;
+  margin-top: 10px;
 
   &__main {
     font-weight: bold;
@@ -239,8 +247,9 @@ $black: black;
     color: grey;
     font-size: 18px;
     border-bottom: 2px solid gainsboro;
-    width: 65% ;
+    width: 65%;
   }
+
   &__item {
     margin-bottom: 0.5em;
     font-size: 15px;
@@ -251,6 +260,17 @@ $black: black;
 
 //メイン投稿一覧
 
+.footer {
+  background-color: #2E2F30;
+  position: absolute; /*←絶対位置*/
+  bottom: 0; /*下に固定*/
+  color: white;
+  font-size: 1.2em;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+
 .title-content {
   display: flex;
   justify-content: center;
@@ -259,6 +279,8 @@ $black: black;
 
 .main-title {
   display: block;
+  font-weight: bold;
+  border-bottom: 2px solid darkgray;
 }
 
 .main-content {
@@ -313,6 +335,12 @@ $black: black;
   font-size: 25px;
   font-weight: bold;
   margin-left: 20px;
+  transition: 0.5s;
+  color: black;
+
+  &:hover {
+    color: cadetblue;
+  }
 }
 
 .tag-container {
@@ -354,6 +382,11 @@ $black: black;
     font-weight: bold;
     margin-left: 5px;
     color: black;
+    transition: 0.5s;
+
+    &:hover {
+      color: cadetblue;
+    }
   }
 }
 
@@ -367,7 +400,9 @@ $black: black;
   width: 40px;
   height: 40px;
   border-radius: 50%;
+
 }
+
 //投稿ボタン
 
 .uploads-btn {

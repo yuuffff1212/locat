@@ -1,0 +1,21 @@
+<% @uploads.each do |upload| %>
+  <div class="category-container__card">
+    <div class="category-container__img">
+      <%= link_to image_tag(upload.image, class: "upload-img"), upload_path(upload.id) if upload.image.attached? %>
+    </div>
+    <div class="category-container__main">
+      <div class="category-container__title">
+        <%= link_to upload.title, upload_path(upload.id) %>
+      </div>
+      <div class="category-container__footer">
+        <div class="category-container__explain">
+          <%= upload.text %>
+        </div>
+        <div class="category-container__user">
+          <%= link_to image_tag(upload.user.avatar, class: "avatar-img"), user_path(upload.user.id) %>
+          <%= link_to upload.user.name, user_path(upload.user.id), class: "upload-user__name" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
