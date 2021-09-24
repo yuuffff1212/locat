@@ -367,6 +367,9 @@ $black: black;
   margin-left: 20px;
   color: gray;
   font-size: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .user-footer {

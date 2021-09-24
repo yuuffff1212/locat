@@ -30,7 +30,6 @@ VOLUME /locat-app/public
 VOLUME /locat-app/tmp
 
 RUN bundle exec rake webpacker:install:vue
-RUN RAILS_ENV=production DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rake db:drop
 
 #RUN yarn install --check-files
 
