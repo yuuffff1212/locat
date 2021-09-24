@@ -29,7 +29,7 @@ RUN mkdir -p tmp/pids
 VOLUME /locat-app/public
 VOLUME /locat-app/tmp
 
-RUN bundle exec rails webpacker:install
+RUN bundle exec rake webpacker:install
 RUN bundle exec rake webpacker:install:vue
 
 #RUN yarn install --check-files
