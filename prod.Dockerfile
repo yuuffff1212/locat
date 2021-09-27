@@ -1,5 +1,6 @@
 FROM ruby:3.0.1
 ENV LANG C.UTF-8
+ENV RAILS_ENV=production
 
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
@@ -20,7 +21,8 @@ RUN bundle install
 
 ADD . /locat-app
 RUN yarn install --check-files
-RUN bundle exec rails webpacker:compile
+#RUN bundle exec rails webpacker:compile
+RUN bundle exec rails assets:precompile
 
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
@@ -33,7 +35,5 @@ VOLUME /locat-app/public
 VOLUME /locat-app/tmp
 
 #RUN bundle exec rake webpacker:install:vue
-
-#RUN yarn install --check-files
 
 CMD bash -c "rm -f tmp/pids/server.pid && bundle exec pumactl start"
