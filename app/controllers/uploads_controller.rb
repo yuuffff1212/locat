@@ -5,7 +5,7 @@ class UploadsController < ApplicationController
 
   def index
     @uploads = Upload.all.order(created_at: :desc)
-    # @uploads = Upload.all.page(params[:page])
+    @uploads = Upload.all.page(params[:page])
     @tag_list = Tag.all
     @ranks = Upload.create_ranks
   end
