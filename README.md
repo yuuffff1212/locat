@@ -8,7 +8,7 @@
 
 * アプリケーションの接続先はこちらから
 * [locate](https://locat-app.herokuapp.com/)
-* 一時的にHerokuへアップ
+* 一時的にHerokuへアップ(接続に少々お時間がかかる場合がございます)
 
 </br>
 
