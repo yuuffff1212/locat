@@ -907,6 +907,28 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="get_process_mem (vbundled(0.2.7)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/get_process_mem-0.2.7/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/get_process_mem-0.2.7/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/get_process_mem-0.2.7/.github" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/get_process_mem-0.2.7/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/get_process_mem-0.2.7/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/get_process_mem-0.2.7/.github" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/get_process_mem-0.2.7/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/get_process_mem-0.2.7/.github" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="globalid (vbundled(0.4.2)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -1620,6 +1642,28 @@
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/puma-5.2.2/ext" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/puma-5.2.2/docs" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/puma-5.2.2/tools" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="puma_worker_killer (vbundled(0.3.1)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/puma_worker_killer-0.3.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/puma_worker_killer-0.3.1/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/puma_worker_killer-0.3.1/.github" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/puma_worker_killer-0.3.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/puma_worker_killer-0.3.1/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/puma_worker_killer-0.3.1/.github" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/puma_worker_killer-0.3.1/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/3.0.0/gems/puma_worker_killer-0.3.1/.github" />
         </excluded>
       </library>
     </orderEntry>

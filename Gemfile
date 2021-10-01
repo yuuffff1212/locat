@@ -80,5 +80,5 @@ gem 'jquery-rails'
 gem 'kaminari', git: 'https://github.com/kaminari/kaminari'
 gem 'mini_magick'
 gem 'pry-rails'
+gem "puma_worker_killer"
 gem 'ransack'
-
