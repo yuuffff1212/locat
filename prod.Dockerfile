@@ -10,7 +10,7 @@ RUN apt-get install -y nodejs npm
 RUN npm install n -g
 RUN n 14.17.6
 
-#RUN mkdir /locat-app
+RUN mkdir /locat-app
 WORKDIR /locat-app
 COPY Gemfile /locat-app/Gemfile
 COPY Gemfile.lock /locat-app/Gemfile.lock
@@ -19,16 +19,17 @@ RUN gem install bundler -v 2.2.24
 RUN bundle install
 COPY . /locat
 RUN yarn install
+ADD . /locat-app
 #RUN NODE_ENV=production ./bin/webpack
-#ADD . /locat-app
 #RUN yarn install --check-files
-RUN bundle exec rails webpacker:compile
+#RUN bundle exec rails webpacker:compile
 RUN bundle exec rails assets:precompile
 
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 #RUN chmod 755 /locat-app/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
+
 # Nginxと通信を行うための準備
 RUN mkdir -p tmp/sockets
 RUN mkdir -p tmp/pids
