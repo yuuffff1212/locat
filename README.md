@@ -1,4 +1,4 @@
-# 個人制作アプリ　[locate](http://www.locat-app.com)
+# 個人制作アプリ　[locate](https://locat-app.herokuapp.com/)
 
 <img src = "https://github.com/yuuffff1212/locat/blob/master/locat.png" width = "800px">
 
@@ -7,7 +7,8 @@
 外出先で充電やWifiが完備されているカフェを探したい時に利用できるアプリケーションになっております。基本的な投稿機能や投稿に対するタグなどから、カフェの情報なども検索できるようになっております。
 
 * アプリケーションの接続先はこちらから
-* [locate](http://www.locat-app.com)
+* [locate](https://locat-app.herokuapp.com/)
+* 一時的にHerokuへアップ
 
 </br>
 
@@ -104,5 +105,4 @@
 ## 現在実装している機能
 
 * タグから投稿を検索できる
-* いいね数に応じたランキング形式の投稿一覧表示機能
 * GoogleMapApiによる地図の表示
