@@ -17,7 +17,8 @@ COPY Gemfile.lock /locat-app/Gemfile.lock
 
 RUN gem install bundler -v 2.2.24
 RUN bundle install
-
+COPY . /locat
+RUN yarn install
 #ADD . /locat-app
 #RUN yarn install --check-files
 #RUN bundle exec rails webpacker:compile
