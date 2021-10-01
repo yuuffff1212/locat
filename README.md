@@ -1,6 +1,6 @@
 # 個人制作アプリ　[locate](https://locat-app.herokuapp.com/)
 
-<img src = "https://github.com/yuuffff1212/locat/blob/master/locat.png" width = "800px">
+<img src = "https://github.com/yuuffff1212/locat/blob/master/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-10-01%2019.36.48.png" width = "800px">
 
 ## 概要
 
