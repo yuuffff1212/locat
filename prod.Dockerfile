@@ -10,19 +10,18 @@ RUN apt-get install -y nodejs npm
 RUN npm install n -g
 RUN n 14.17.6
 
-RUN mkdir /locat-app
+#RUN mkdir /locat-app
 WORKDIR /locat-app
-
 COPY Gemfile /locat-app/Gemfile
 COPY Gemfile.lock /locat-app/Gemfile.lock
 
 RUN gem install bundler -v 2.2.24
 RUN bundle install
 
-ADD . /locat-app
-RUN yarn install --check-files
+#ADD . /locat-app
+#RUN yarn install --check-files
 #RUN bundle exec rails webpacker:compile
-RUN bundle exec rails assets:precompile
+#RUN bundle exec rails assets:precompile
 
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
