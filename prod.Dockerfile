@@ -20,6 +20,7 @@ RUN bundle install
 COPY . /locat
 RUN yarn install
 ADD . /locat-app
+RUN yarn add @rails/webpacker bundle update webpacker
 #RUN yarn install --check-files
 
 COPY entrypoint.sh /usr/bin/
