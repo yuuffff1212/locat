@@ -20,10 +20,7 @@ RUN bundle install
 COPY . /locat
 RUN yarn install
 ADD . /locat-app
-#RUN NODE_ENV=production ./bin/webpack
 #RUN yarn install --check-files
-#RUN bundle exec rails webpacker:compile
-RUN bundle exec rails assets:precompile
 
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
