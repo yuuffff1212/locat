@@ -17,8 +17,6 @@ RUN bundle install
 RUN yarn install
 EXPOSE 3000
 
-CMD ["rails", "server", "-b", "0.0.0.0"]
-
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
@@ -26,7 +24,7 @@ ENTRYPOINT ["entrypoint.sh"]
 # Nginxと通信を行うための準備
 RUN mkdir -p tmp/sockets
 RUN mkdir -p tmp/pids
-VOLUME /locat-app/public
-VOLUME /locat-app/tmp
+#VOLUME /locat-app/public
+#VOLUME /locat-app/tmp
 
 CMD bash -c "rm -f tmp/pids/server.pid && bundle exec pumactl start"
