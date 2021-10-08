@@ -2,6 +2,7 @@ FROM ruby:3.0.1
 
 ENV LANG C.UTF-8
 ENV RAILS_ENV=production
+ENV NODE_ENV=production
 
 RUN apt-get update -qq \
    && rm -rf /var/lib/apt/lists/*
