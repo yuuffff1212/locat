@@ -25,7 +25,7 @@ ENTRYPOINT ["entrypoint.sh"]
 # Nginxと通信を行うための準備
 RUN mkdir -p tmp/sockets
 RUN mkdir -p tmp/pids
-#VOLUME /locat-app/public
-#VOLUME /locat-app/tmp
+VOLUME /locat-app/public
+VOLUME /locat-app/tmp
 
 CMD bash -c "rm -f tmp/pids/server.pid && bundle exec pumactl start"
